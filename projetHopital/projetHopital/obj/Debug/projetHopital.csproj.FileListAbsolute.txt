@@ -1,0 +1,13 @@
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.csprojResolveAssemblyReference.cache
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Form1.resources
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.AjouterMedicament.resources
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.ModifierStock.resources
+C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Commande.resources
