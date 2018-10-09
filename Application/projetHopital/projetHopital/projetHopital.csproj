@@ -74,6 +74,7 @@
     <Compile Include="ModifierStock.Designer.cs">
       <DependentUpon>ModifierStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock.cs">
