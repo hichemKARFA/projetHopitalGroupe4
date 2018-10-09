@@ -14,3 +14,17 @@ C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopit
 F:\sio2\Tom Jablonski\PPE\GitHub\projetHopitalGroupe4\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
 F:\sio2\Tom Jablonski\PPE\GitHub\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
 F:\sio2\Tom Jablonski\PPE\GitHub\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csprojResolveAssemblyReference.cache
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.AjouterMedicament.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Commande.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Demande.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Form1.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.ModifierStock.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
