@@ -64,10 +64,10 @@
             // lblmodifications
             // 
             this.lblmodifications.AutoSize = true;
-            this.lblmodifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmodifications.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmodifications.Location = new System.Drawing.Point(181, 18);
             this.lblmodifications.Name = "lblmodifications";
-            this.lblmodifications.Size = new System.Drawing.Size(557, 42);
+            this.lblmodifications.Size = new System.Drawing.Size(569, 38);
             this.lblmodifications.TabIndex = 9;
             this.lblmodifications.Text = "Modifications d\'un médicament";
             // 
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(860, 447);
+            this.ClientSize = new System.Drawing.Size(885, 690);
             this.Controls.Add(this.lblmodifications);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnRetour);

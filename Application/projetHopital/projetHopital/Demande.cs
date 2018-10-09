@@ -16,5 +16,23 @@ namespace projetHopital
         {
             InitializeComponent();
         }
+
+        private void btnRetour_Click(object sender, EventArgs e)
+        {
+            Accueil accueil = new Accueil();
+            this.Hide();
+            accueil.ShowDialog();
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vous quittez le logiciel");
+            Application.Exit();
+        }
+
+        private void lbldemandes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

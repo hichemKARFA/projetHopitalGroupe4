@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projetHopital
 {
-    public partial class Form1 : Form
+    public partial class Connexion : Form
     {
-        public Form1()
+        public Connexion()
         {
             InitializeComponent();
         }
@@ -30,16 +30,28 @@ namespace projetHopital
 
         private void btnCommande_Click(object sender, EventArgs e)
         {
-            Commande commande = new Commande();
-            this.Hide();
-            commande.ShowDialog();
+            
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            Stock stock = new Stock();
-            this.Hide();
-            stock.ShowDialog();
+            
+            
+        }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            if (txtIdentifiant.Text == String.Empty || txtMdp.Text == String.Empty)
+            {
+                MessageBox.Show("Veuillez vérifier que vous ayez bien tout rempli");
+            }
+            else
+            {
+                MessageBox.Show("Bonjour "+txtIdentifiant.Text+"! Bienvenue sur l'application.");
+                Accueil accueil = new Accueil();
+                this.Hide();
+                accueil.ShowDialog();
+            }
             
         }
     }

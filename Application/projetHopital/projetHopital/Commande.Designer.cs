@@ -49,7 +49,7 @@
             this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetour.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetour.ForeColor = System.Drawing.Color.White;
-            this.btnRetour.Location = new System.Drawing.Point(686, 629);
+            this.btnRetour.Location = new System.Drawing.Point(689, 547);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(143, 48);
             this.btnRetour.TabIndex = 11;
@@ -63,7 +63,7 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitter.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.White;
-            this.btnQuitter.Location = new System.Drawing.Point(859, 629);
+            this.btnQuitter.Location = new System.Drawing.Point(857, 547);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 48);
             this.btnQuitter.TabIndex = 12;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 689);
+            this.ClientSize = new System.Drawing.Size(1012, 607);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblCommande);

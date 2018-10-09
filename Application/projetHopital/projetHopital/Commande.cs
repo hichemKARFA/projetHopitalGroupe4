@@ -25,7 +25,7 @@ namespace projetHopital
 
         private void btnRetour_Click(object sender, EventArgs e)
         {
-            Form1 accueil = new Form1();
+            Accueil accueil = new Accueil();
             this.Hide();
             accueil.ShowDialog();
         }
