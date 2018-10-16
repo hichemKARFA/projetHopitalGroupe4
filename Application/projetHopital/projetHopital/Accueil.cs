@@ -44,7 +44,7 @@ namespace projetHopital
 
         private void btnDemande_Click(object sender, EventArgs e)
         {
-            Demande demande = new Demande();
+            gestionDemandes demande = new gestionDemandes();
             this.Hide();
             demande.ShowDialog();
         }

@@ -74,6 +74,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gestionDemandes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gestionDemandes.Designer.cs">
+      <DependentUpon>gestionDemandes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModifierStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gestionDemandes.resx">
+      <DependentUpon>gestionDemandes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModifierStock.resx">
       <DependentUpon>ModifierStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +123,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Stock.resx">
       <DependentUpon>Stock.cs</DependentUpon>
@@ -130,6 +140,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
