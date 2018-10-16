@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace projetHopital
 {
-    public partial class Commande : Form
+    public partial class gestionDemandes : Form
     {
-        public Commande()
+        public gestionDemandes()
         {
             InitializeComponent();
         }
@@ -28,11 +28,6 @@ namespace projetHopital
             Accueil accueil = new Accueil();
             this.Hide();
             accueil.ShowDialog();
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
