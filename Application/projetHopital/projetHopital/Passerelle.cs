@@ -104,5 +104,15 @@ namespace projetHopital
             seDeconnecter();
             return test;
         }
+
+        public static void faireCommande(int id,int quantite)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update medicaments Set stock =(select stock from medicaments where id="+id+")+"+quantite+" where id="+id;
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
     }
 }

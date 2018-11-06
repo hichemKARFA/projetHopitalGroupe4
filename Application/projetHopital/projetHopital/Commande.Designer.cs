@@ -32,7 +32,6 @@
             this.btnRetour = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnValider = new System.Windows.Forms.Button();
-            this.btnSelectionner = new System.Windows.Forms.Button();
             this.lblQuantité = new System.Windows.Forms.Label();
             this.txtQuantite = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -92,19 +91,7 @@
             this.btnValider.TabIndex = 14;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
-            // 
-            // btnSelectionner
-            // 
-            this.btnSelectionner.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSelectionner.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelectionner.ForeColor = System.Drawing.Color.White;
-            this.btnSelectionner.Location = new System.Drawing.Point(790, 206);
-            this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(189, 48);
-            this.btnSelectionner.TabIndex = 15;
-            this.btnSelectionner.Text = "Sélectionner";
-            this.btnSelectionner.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // lblQuantité
             // 
@@ -174,7 +161,6 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.txtQuantite);
             this.Controls.Add(this.lblQuantité);
-            this.Controls.Add(this.btnSelectionner);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnRetour);
@@ -193,7 +179,6 @@
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.Button btnSelectionner;
         private System.Windows.Forms.Label lblQuantité;
         private System.Windows.Forms.TextBox txtQuantite;
         private System.Windows.Forms.ListView listView1;
