@@ -1,0 +1,19 @@
+public static bool getPharmacien(string identifiant, string mdp)
+        {
+            bool test = false;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + identifiant + "' AND mdp ='" + mdp + "'";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int statutBdd = (int)unJeuResultat["statut"];
+                if (statutBdd == 1)
+                {
+                    test = true;
+                }
+            }
+            seDeconnecter();
+            return test;
+        }
