@@ -79,3 +79,6 @@ C:\Users\sio2018\Desktop\projetHopital\projetHopital\obj\Debug\projetHopital.Mod
 C:\Users\sio2018\Desktop\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
 C:\Users\sio2018\Desktop\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
 C:\Users\sio2018\Desktop\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Accueil.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Connexion.resources
+C:\Users\sio2018\Documents\PPE\Github\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
