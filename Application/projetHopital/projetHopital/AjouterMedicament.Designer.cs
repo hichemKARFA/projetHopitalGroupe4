@@ -74,10 +74,10 @@
             // 
             this.lblAjouterMedicament.AutoSize = true;
             this.lblAjouterMedicament.BackColor = System.Drawing.Color.Transparent;
-            this.lblAjouterMedicament.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjouterMedicament.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAjouterMedicament.Location = new System.Drawing.Point(307, 9);
             this.lblAjouterMedicament.Name = "lblAjouterMedicament";
-            this.lblAjouterMedicament.Size = new System.Drawing.Size(430, 38);
+            this.lblAjouterMedicament.Size = new System.Drawing.Size(421, 42);
             this.lblAjouterMedicament.TabIndex = 7;
             this.lblAjouterMedicament.Text = "Ajouter un médicament";
             this.lblAjouterMedicament.Click += new System.EventHandler(this.lblAjouterMedicament_Click);
@@ -86,10 +86,10 @@
             // 
             this.lblNumero.AutoSize = true;
             this.lblNumero.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumero.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumero.Location = new System.Drawing.Point(65, 115);
             this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(159, 38);
+            this.lblNumero.Size = new System.Drawing.Size(156, 42);
             this.lblNumero.TabIndex = 8;
             this.lblNumero.Text = "Numero";
             // 
@@ -97,10 +97,10 @@
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.BackColor = System.Drawing.Color.Transparent;
-            this.lblNom.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.Location = new System.Drawing.Point(79, 206);
             this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(101, 38);
+            this.lblNom.Size = new System.Drawing.Size(99, 42);
             this.lblNom.TabIndex = 9;
             this.lblNom.Text = "Nom";
             // 
@@ -108,10 +108,10 @@
             // 
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuantite.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.Location = new System.Drawing.Point(57, 298);
             this.lblQuantite.Name = "lblQuantite";
-            this.lblQuantite.Size = new System.Drawing.Size(167, 38);
+            this.lblQuantite.Size = new System.Drawing.Size(167, 42);
             this.lblQuantite.TabIndex = 10;
             this.lblQuantite.Text = "Quantité";
             // 
@@ -119,10 +119,10 @@
             // 
             this.lblSeuil.AutoSize = true;
             this.lblSeuil.BackColor = System.Drawing.Color.Transparent;
-            this.lblSeuil.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSeuil.Location = new System.Drawing.Point(75, 384);
             this.lblSeuil.Name = "lblSeuil";
-            this.lblSeuil.Size = new System.Drawing.Size(105, 38);
+            this.lblSeuil.Size = new System.Drawing.Size(106, 42);
             this.lblSeuil.TabIndex = 11;
             this.lblSeuil.Text = "Seuil";
             // 
@@ -138,6 +138,7 @@
             this.btnValider.TabIndex = 12;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // txtNum
             // 

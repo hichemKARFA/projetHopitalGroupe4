@@ -40,7 +40,7 @@ namespace projetHopital
         {
             ArrayList lesMedicaments = new ArrayList();
             lesMedicaments = Passerelle.listeMedicaments();
-            foreach (Medicament unMedicament in lesMedicaments)
+            foreach (Medicament unMedicament in lesMedicaments) //Affiche la liste
             {
                 string[] arr = new string[4];
                 ListViewItem itm;
