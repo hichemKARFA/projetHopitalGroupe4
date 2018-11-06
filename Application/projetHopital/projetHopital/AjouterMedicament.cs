@@ -34,5 +34,10 @@ namespace projetHopital
         {
 
         }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            Medicament M1 = new Medicament(int.Parse(txtNum.Text), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
+        }
     }
 }

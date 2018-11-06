@@ -11,7 +11,7 @@ namespace projetHopital
 {
     class Passerelle
     {
-        private static SqlConnection laConnection = null;
+        private static SqlConnection laConnection = null; // Acceder a la BBD
         private static bool seConnecter()
         {
             if (laConnection == null)
@@ -32,7 +32,7 @@ namespace projetHopital
         }
 
 
-        public static bool seDeconnecter()
+        public static bool seDeconnecter() // coupe la connection a la bdd
         {
             if (laConnection != null)
             {
@@ -43,7 +43,7 @@ namespace projetHopital
             }
             return true;
         }
-        public static bool verifUtilisateur(string identifiant, string mdp)
+        public static bool verifUtilisateur(string identifiant, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
         {
             bool test = false;
             seConnecter();
@@ -64,7 +64,7 @@ namespace projetHopital
             return test;
         }
 
-        public static ArrayList listeMedicaments()
+        public static ArrayList listeMedicaments() // donne la liste des medicaments 
         {
             ArrayList lesMedicaments = new ArrayList();
             seConnecter();
@@ -85,7 +85,7 @@ namespace projetHopital
             return lesMedicaments;
         }
 
-        public static bool getPharmacien(string identifiant, string mdp)
+        public static bool getPharmacien(string identifiant, string mdp) //Savoir si la personne est un pharmacien ou un infirmier
         {
             bool test = false;
             seConnecter();
@@ -104,5 +104,24 @@ namespace projetHopital
             seDeconnecter();
             return test;
         }
+
+        public static void faireCommande(int id,int quantite)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update medicaments Set stock =(select stock from medicaments where id="+id+")+"+quantite+" where id="+id;
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
+        /*  Hichem debut ajout
+         public static bool ajoutMedicamet(Medicament unMedoc)
+        {
+            bool test = false;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + identifiant + "' AND mdp ='" + mdp + "'";
+
+        } */
     }
 }
