@@ -47,13 +47,13 @@ namespace projetHopital
             bool test = false;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT login FROM Utilisateurs WHERE login="+identifiant+" AND mdp ="+mdp;
+            String requete = "SELECT login,mdp FROM Utilisateurs WHERE login='"+identifiant+"' AND mdp ='"+mdp+"'";
             maCommande = new SqlCommand(requete, laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read())
             {
-                string idBdd = (string)unJeuResultat["id"];
-                string mdpBdd = (string)unJeuResultat["password"];
+                string idBdd = (string)unJeuResultat["login"];
+                string mdpBdd = (string)unJeuResultat["mdp"];
                 if (identifiant == idBdd && mdp == mdpBdd)
                 {
                     test = true;
