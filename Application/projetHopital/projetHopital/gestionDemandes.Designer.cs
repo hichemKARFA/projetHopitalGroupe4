@@ -49,6 +49,7 @@
             this.Quantité,
             this.Etat,
             this.Infirmier});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(144, 74);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -89,10 +90,10 @@
             // lblCommande
             // 
             this.lblCommande.AutoSize = true;
-            this.lblCommande.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCommande.Location = new System.Drawing.Point(350, 9);
             this.lblCommande.Name = "lblCommande";
-            this.lblCommande.Size = new System.Drawing.Size(346, 38);
+            this.lblCommande.Size = new System.Drawing.Size(348, 42);
             this.lblCommande.TabIndex = 15;
             this.lblCommande.Text = "Gestion demandes";
             // 
