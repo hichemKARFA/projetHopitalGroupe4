@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace projetHopital
 {
@@ -31,6 +32,28 @@ namespace projetHopital
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Commande_Load(object sender, EventArgs e)
+        {
+            ArrayList lesMedicaments = new ArrayList();
+            lesMedicaments = Passerelle.listeMedicaments();
+            foreach (Medicament unMedicament in lesMedicaments)
+            {
+                string[] arr = new string[4];
+                ListViewItem itm;
+                arr[0] = unMedicament.getId() + "";
+                arr[1] = unMedicament.getNom();
+                arr[2] = unMedicament.getStock() + "";
+                arr[3] = unMedicament.getSeuil() + "";
+                itm = new ListViewItem(arr);
+                listView1.Items.Add(itm);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

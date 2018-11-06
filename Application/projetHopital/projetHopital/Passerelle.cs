@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections;
 
 namespace projetHopital
 {
@@ -55,6 +56,47 @@ namespace projetHopital
                 string idBdd = (string)unJeuResultat["login"];
                 string mdpBdd = (string)unJeuResultat["mdp"];
                 if (identifiant == idBdd && mdp == mdpBdd)
+                {
+                    test = true;
+                }
+            }
+            seDeconnecter();
+            return test;
+        }
+
+        public static ArrayList listeMedicaments()
+        {
+            ArrayList lesMedicaments = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "select id, nom, stock, seuil from medicaments";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int id=(int)unJeuResultat["id"];
+                string nom=(string)unJeuResultat["nom"];
+                int stock=(int)unJeuResultat["stock"];
+                int seuil=(int)unJeuResultat["seuil"];
+                Medicament unMedicament = new Medicament(id, nom, stock, seuil);
+                lesMedicaments.Add(unMedicament);
+            }
+            seDeconnecter();
+            return lesMedicaments;
+        }
+
+        public static bool getPharmacien(string identifiant, string mdp)
+        {
+            bool test = false;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + identifiant + "' AND mdp ='" + mdp + "'";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int statutBdd = (int)unJeuResultat["statut"];
+                if (statutBdd == 1)
                 {
                     test = true;
                 }

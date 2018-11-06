@@ -132,6 +132,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(70, 60);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -139,6 +140,7 @@
             this.listView1.TabIndex = 19;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
             // 
             // columnHeader1
             // 
@@ -179,6 +181,7 @@
             this.Controls.Add(this.lblCommande);
             this.Name = "Commande";
             this.Text = "Commande";
+            this.Load += new System.EventHandler(this.Commande_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

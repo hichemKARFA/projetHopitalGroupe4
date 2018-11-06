@@ -47,10 +47,10 @@
             // lblAjoutDemande
             // 
             this.lblAjoutDemande.AutoSize = true;
-            this.lblAjoutDemande.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAjoutDemande.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAjoutDemande.Location = new System.Drawing.Point(337, 9);
             this.lblAjoutDemande.Name = "lblAjoutDemande";
-            this.lblAjoutDemande.Size = new System.Drawing.Size(399, 38);
+            this.lblAjoutDemande.Size = new System.Drawing.Size(394, 42);
             this.lblAjoutDemande.TabIndex = 1;
             this.lblAjoutDemande.Text = "Ajouter une demande";
             this.lblAjoutDemande.Click += new System.EventHandler(this.lbldemandes_Click);
@@ -138,10 +138,10 @@
             // lblQuantite
             // 
             this.lblQuantite.AutoSize = true;
-            this.lblQuantite.Font = new System.Drawing.Font("News Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantite.Location = new System.Drawing.Point(698, 203);
             this.lblQuantite.Name = "lblQuantite";
-            this.lblQuantite.Size = new System.Drawing.Size(181, 38);
+            this.lblQuantite.Size = new System.Drawing.Size(178, 42);
             this.lblQuantite.TabIndex = 16;
             this.lblQuantite.Text = "Quantité:";
             // 
@@ -210,6 +210,7 @@
             this.Controls.Add(this.lblAjoutDemande);
             this.Name = "Demande";
             this.Text = "Demande";
+            this.Load += new System.EventHandler(this.Demande_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

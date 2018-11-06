@@ -48,21 +48,36 @@ namespace projetHopital
             }
             else if (Passerelle.verifUtilisateur(txtIdentifiant.Text, txtMdp.Text))
             {
-                MessageBox.Show("Bonjour "+txtIdentifiant.Text+"! Bienvenue sur l'application.");
-                Accueil accueil = new Accueil();
-                this.Hide();
-                accueil.ShowDialog();
+                MessageBox.Show("Bonjour " + txtIdentifiant.Text + "! Bienvenue sur l'application.");
+                if (Passerelle.getPharmacien(txtIdentifiant.Text, txtMdp.Text))
+                {
+                    Accueil accueil = new Accueil();
+                    this.Hide();
+                    accueil.ShowDialog();
+                }
+                else
+                {
+                    Demande demande = new Demande();
+                    this.Hide();
+                    demande.ShowDialog();
+                }
+
             }
             else
             {
                 MessageBox.Show("Le login et le mot de passe ne correspondent pas");
             }
-            
+
         }
 
         private void txtMdp_TextChanged(object sender, EventArgs e)
         {
             txtMdp.PasswordChar = '*';
+        }
+
+        private void Connexion_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

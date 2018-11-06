@@ -80,6 +80,7 @@
     <Compile Include="gestionDemandes.Designer.cs">
       <DependentUpon>gestionDemandes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Medicament.cs" />
     <Compile Include="ModifierStock.cs">
       <SubType>Form</SubType>
     </Compile>
