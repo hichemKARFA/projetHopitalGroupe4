@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblAjoutDemande = new System.Windows.Forms.Label();
-            this.btnRetour = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,20 +53,6 @@
             this.lblAjoutDemande.TabIndex = 1;
             this.lblAjoutDemande.Text = "Ajouter une demande";
             this.lblAjoutDemande.Click += new System.EventHandler(this.lbldemandes_Click);
-            // 
-            // btnRetour
-            // 
-            this.btnRetour.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRetour.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetour.ForeColor = System.Drawing.Color.White;
-            this.btnRetour.Location = new System.Drawing.Point(691, 554);
-            this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(143, 48);
-            this.btnRetour.TabIndex = 12;
-            this.btnRetour.Text = "Retour";
-            this.btnRetour.UseVisualStyleBackColor = false;
-            this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
             // 
             // btnQuitter
             // 
@@ -207,7 +192,6 @@
             this.Controls.Add(this.btnSelectionner);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblAjoutDemande);
             this.Name = "Demande";
             this.Text = "Demande";
@@ -220,7 +204,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblAjoutDemande;
-        private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
