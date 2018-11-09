@@ -98,7 +98,7 @@
             this.lblNom.AutoSize = true;
             this.lblNom.BackColor = System.Drawing.Color.Transparent;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(79, 206);
+            this.lblNom.Location = new System.Drawing.Point(65, 206);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(99, 42);
             this.lblNom.TabIndex = 9;
@@ -109,7 +109,7 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantite.Location = new System.Drawing.Point(57, 298);
+            this.lblQuantite.Location = new System.Drawing.Point(65, 298);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(167, 42);
             this.lblQuantite.TabIndex = 10;
@@ -120,7 +120,7 @@
             this.lblSeuil.AutoSize = true;
             this.lblSeuil.BackColor = System.Drawing.Color.Transparent;
             this.lblSeuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeuil.Location = new System.Drawing.Point(75, 384);
+            this.lblSeuil.Location = new System.Drawing.Point(65, 384);
             this.lblSeuil.Name = "lblSeuil";
             this.lblSeuil.Size = new System.Drawing.Size(106, 42);
             this.lblSeuil.TabIndex = 11;
@@ -145,7 +145,7 @@
             this.txtNum.BackColor = System.Drawing.Color.White;
             this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNum.Location = new System.Drawing.Point(314, 117);
+            this.txtNum.Location = new System.Drawing.Point(304, 122);
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(140, 38);
             this.txtNum.TabIndex = 13;
@@ -154,7 +154,7 @@
             // 
             this.txtQuantite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantite.Location = new System.Drawing.Point(304, 298);
+            this.txtQuantite.Location = new System.Drawing.Point(304, 305);
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(150, 38);
             this.txtQuantite.TabIndex = 14;
@@ -163,7 +163,7 @@
             // 
             this.txtSeuil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSeuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeuil.Location = new System.Drawing.Point(304, 384);
+            this.txtSeuil.Location = new System.Drawing.Point(304, 391);
             this.txtSeuil.Name = "txtSeuil";
             this.txtSeuil.Size = new System.Drawing.Size(150, 38);
             this.txtSeuil.TabIndex = 15;
@@ -172,7 +172,7 @@
             // 
             this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(314, 206);
+            this.txtNom.Location = new System.Drawing.Point(304, 213);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(382, 38);
             this.txtNom.TabIndex = 16;
@@ -199,6 +199,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Name = "AjouterMedicament";
             this.Text = "AjouterMedicament";
+            this.Load += new System.EventHandler(this.AjouterMedicament_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

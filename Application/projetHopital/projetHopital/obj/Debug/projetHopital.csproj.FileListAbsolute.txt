@@ -31,7 +31,6 @@ C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopit
 C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Demande.resources
 C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.Connexion.resources
 C:\Users\sio2018\Documents\PPE\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
-<<<<<<< HEAD
 F:\sio2\GITHUB\donneLocal\projetHopitalGroupe4\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
 F:\sio2\GITHUB\donneLocal\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
 F:\sio2\GITHUB\donneLocal\projetHopitalGroupe4\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb

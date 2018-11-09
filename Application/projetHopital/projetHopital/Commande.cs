@@ -64,7 +64,7 @@ namespace projetHopital
             int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
             Passerelle.faireCommande(id,quantite);
             txtQuantite.Text = "";
-            listView1.Items.Clear(); ;
+            listView1.Items.Clear();
             ArrayList lesMedicaments = new ArrayList();
             lesMedicaments = Passerelle.listeMedicaments();
             foreach (Medicament unMedicament in lesMedicaments) // reaffiche la liste (pour mettre a jour)
