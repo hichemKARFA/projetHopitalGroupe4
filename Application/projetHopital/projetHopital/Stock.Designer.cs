@@ -146,7 +146,7 @@
             // 
             this.columnHeader4.Text = "Seuil";
             this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader4.Width = 155;
+            this.columnHeader4.Width = 156;
             // 
             // btnSupprimer
             // 

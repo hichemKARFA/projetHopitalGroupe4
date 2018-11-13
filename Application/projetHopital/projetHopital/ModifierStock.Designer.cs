@@ -144,6 +144,7 @@
             this.btnValider.TabIndex = 20;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // ModifierStock
             // 

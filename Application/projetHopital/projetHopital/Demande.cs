@@ -42,12 +42,10 @@ namespace projetHopital
             lesMedicaments = Passerelle.listeMedicaments();
             foreach (Medicament unMedicament in lesMedicaments)
             {
-                string[] arr = new string[4];
+                string[] arr = new string[2];
                 ListViewItem itm;
                 arr[0] = unMedicament.getId() + "";
                 arr[1] = unMedicament.getNom();
-                arr[2] = unMedicament.getStock() + "";
-                arr[3] = unMedicament.getSeuil() + "";
                 itm = new ListViewItem(arr);
                 listView1.Items.Add(itm);
             }

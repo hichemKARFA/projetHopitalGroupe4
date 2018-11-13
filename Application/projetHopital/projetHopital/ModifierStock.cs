@@ -40,5 +40,26 @@ namespace projetHopital
             txtQtte.Text = unMedicament.getStock()+"";
             txtSeuil.Text = unMedicament.getSeuil() + "";
         }
+
+        private void btnValider_Click(object sender, EventArgs e)
+        {
+            string nom = txtNom.Text;
+            int stock = int.Parse(txtQtte.Text);
+            int seuil = int.Parse(txtSeuil.Text);
+            Medicament unMedicament = new Medicament(id, nom, stock, seuil);
+            bool test = Passerelle.modifierMedicament(unMedicament);
+            if (test == true)
+            {
+                MessageBox.Show("Le médicament à bien été modifié");
+                Stock stock2 = new Stock();
+                this.Hide();
+                stock2.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Une erreur est survenue");
+            }
+
+        }
     }
 }

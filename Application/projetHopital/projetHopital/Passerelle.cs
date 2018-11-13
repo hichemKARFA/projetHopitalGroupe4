@@ -186,7 +186,24 @@ namespace projetHopital
                 unMedicament = new Medicament(id, nom, stock, seuil);
             }
             seDeconnecter();
-            return unMedicament;     
+            return unMedicament;
+        }
+
+        public static bool modifierMedicament(Medicament unMedicament)
+        {
+            bool test = false;
+            int id=unMedicament.getId();
+            string nom=unMedicament.getNom();
+            int stock=unMedicament.getStock();
+            int seuil=unMedicament.getSeuil();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update medicaments set nom ='" + nom + "',stock=" + stock + ",seuil=" + seuil+" where id="+id;
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+            test = true;
+            return test;
         }
     }
 }
