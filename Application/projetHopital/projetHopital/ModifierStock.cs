@@ -12,9 +12,11 @@ namespace projetHopital
 {
     public partial class ModifierStock : Form
     {
-        public ModifierStock()
+        private int id;
+        public ModifierStock(int pId)
         {
             InitializeComponent();
+            id = pId;
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -28,6 +30,15 @@ namespace projetHopital
             Stock stock = new Stock();
             this.Hide();
             stock.ShowDialog();
+        }
+
+        private void ModifierStock_Load(object sender, EventArgs e)
+        {
+            Medicament unMedicament;
+            unMedicament = Passerelle.trouverMedicament(id);
+            txtNom.Text = unMedicament.getNom();
+            txtQtte.Text = unMedicament.getStock()+"";
+            txtSeuil.Text = unMedicament.getSeuil() + "";
         }
     }
 }

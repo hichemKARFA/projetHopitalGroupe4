@@ -37,8 +37,20 @@ namespace projetHopital
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            Medicament unMedicament = new Medicament(int.Parse(txtNum.Text), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
-
+            bool test;
+            Medicament unMedicament = new Medicament(Passerelle.trouverId(), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
+            test=Passerelle.ajoutMedicament(unMedicament);
+            if (test==true)
+            {
+                MessageBox.Show("Le médicament à bien été ajouté");
+                Stock stock = new Stock();
+                this.Hide();
+                stock.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Une erreur est survenue");
+            }
         }
 
         private void AjouterMedicament_Load(object sender, EventArgs e)

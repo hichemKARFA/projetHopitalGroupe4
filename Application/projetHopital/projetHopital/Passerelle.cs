@@ -114,14 +114,79 @@ namespace projetHopital
             maCommande.ExecuteNonQuery();
             seDeconnecter();
         }
-        /*  Hichem debut ajout
-         public static bool ajoutMedicamet(Medicament unMedoc)
+        
+         public static bool ajoutMedicament(Medicament unMedicament)
+        {
+            bool test = false;
+            int id=trouverId();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Insert into medicaments values ("+unMedicament.getId()+",'"+unMedicament.getNom()+"',"+unMedicament.getStock()+","+unMedicament.getSeuil()+")";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+            test = true;
+            return test;
+        }
+
+        public static int trouverId()
+         {
+            int test=0, id;
+            int resultat=0;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Select id from medicaments";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read()&&resultat==0)
+            {
+                id = (int)unJeuResultat["id"];
+                if(id!=test+1)
+                {
+                    resultat = test + 1;
+                }
+                test++;
+            }
+            if(resultat==0)
+            {
+                resultat = test+1;
+            }
+            seDeconnecter();
+            return resultat;
+         }
+
+        public static bool supprimerMedicament(int id)
         {
             bool test = false;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + identifiant + "' AND mdp ='" + mdp + "'";
+            String requete = "Delete from medicaments where id="+id;
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+            test = true;
+            return test;
+        }
 
-        } */
+        public static Medicament trouverMedicament(int id)
+        {
+            string nom;
+            int stock, seuil;
+            Medicament unMedicament = null;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Select nom,stock,seuil from medicaments where id=" + id;
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                nom = (string)unJeuResultat["nom"];
+                stock = (int)unJeuResultat["stock"];
+                seuil = (int)unJeuResultat["seuil"];
+                unMedicament = new Medicament(id, nom, stock, seuil);
+            }
+            seDeconnecter();
+            return unMedicament;     
+        }
     }
 }

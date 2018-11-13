@@ -31,12 +31,10 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.btnRetour = new System.Windows.Forms.Button();
             this.lblAjouterMedicament = new System.Windows.Forms.Label();
-            this.lblNumero = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblQuantite = new System.Windows.Forms.Label();
             this.lblSeuil = new System.Windows.Forms.Label();
             this.btnValider = new System.Windows.Forms.Button();
-            this.txtNum = new System.Windows.Forms.TextBox();
             this.txtQuantite = new System.Windows.Forms.TextBox();
             this.txtSeuil = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
@@ -48,7 +46,7 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitter.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.White;
-            this.btnQuitter.Location = new System.Drawing.Point(865, 552);
+            this.btnQuitter.Location = new System.Drawing.Point(865, 442);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 48);
             this.btnQuitter.TabIndex = 5;
@@ -62,7 +60,7 @@
             this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetour.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetour.ForeColor = System.Drawing.Color.White;
-            this.btnRetour.Location = new System.Drawing.Point(716, 552);
+            this.btnRetour.Location = new System.Drawing.Point(715, 442);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(143, 48);
             this.btnRetour.TabIndex = 6;
@@ -82,23 +80,12 @@
             this.lblAjouterMedicament.Text = "Ajouter un médicament";
             this.lblAjouterMedicament.Click += new System.EventHandler(this.lblAjouterMedicament_Click);
             // 
-            // lblNumero
-            // 
-            this.lblNumero.AutoSize = true;
-            this.lblNumero.BackColor = System.Drawing.Color.Transparent;
-            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumero.Location = new System.Drawing.Point(65, 115);
-            this.lblNumero.Name = "lblNumero";
-            this.lblNumero.Size = new System.Drawing.Size(156, 42);
-            this.lblNumero.TabIndex = 8;
-            this.lblNumero.Text = "Numero";
-            // 
             // lblNom
             // 
             this.lblNom.AutoSize = true;
             this.lblNom.BackColor = System.Drawing.Color.Transparent;
             this.lblNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNom.Location = new System.Drawing.Point(65, 206);
+            this.lblNom.Location = new System.Drawing.Point(65, 118);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(99, 42);
             this.lblNom.TabIndex = 9;
@@ -109,7 +96,7 @@
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.BackColor = System.Drawing.Color.Transparent;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantite.Location = new System.Drawing.Point(65, 298);
+            this.lblQuantite.Location = new System.Drawing.Point(65, 230);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(167, 42);
             this.lblQuantite.TabIndex = 10;
@@ -120,7 +107,7 @@
             this.lblSeuil.AutoSize = true;
             this.lblSeuil.BackColor = System.Drawing.Color.Transparent;
             this.lblSeuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeuil.Location = new System.Drawing.Point(65, 384);
+            this.lblSeuil.Location = new System.Drawing.Point(65, 342);
             this.lblSeuil.Name = "lblSeuil";
             this.lblSeuil.Size = new System.Drawing.Size(106, 42);
             this.lblSeuil.TabIndex = 11;
@@ -132,7 +119,7 @@
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.White;
-            this.btnValider.Location = new System.Drawing.Point(417, 552);
+            this.btnValider.Location = new System.Drawing.Point(400, 442);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(180, 48);
             this.btnValider.TabIndex = 12;
@@ -140,21 +127,11 @@
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
-            // txtNum
-            // 
-            this.txtNum.BackColor = System.Drawing.Color.White;
-            this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNum.Location = new System.Drawing.Point(304, 122);
-            this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(140, 38);
-            this.txtNum.TabIndex = 13;
-            // 
             // txtQuantite
             // 
             this.txtQuantite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantite.Location = new System.Drawing.Point(304, 305);
+            this.txtQuantite.Location = new System.Drawing.Point(280, 237);
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(150, 38);
             this.txtQuantite.TabIndex = 14;
@@ -163,7 +140,7 @@
             // 
             this.txtSeuil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSeuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeuil.Location = new System.Drawing.Point(304, 391);
+            this.txtSeuil.Location = new System.Drawing.Point(280, 349);
             this.txtSeuil.Name = "txtSeuil";
             this.txtSeuil.Size = new System.Drawing.Size(150, 38);
             this.txtSeuil.TabIndex = 15;
@@ -172,7 +149,7 @@
             // 
             this.txtNom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNom.Location = new System.Drawing.Point(304, 213);
+            this.txtNom.Location = new System.Drawing.Point(280, 125);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(382, 38);
             this.txtNom.TabIndex = 16;
@@ -182,18 +159,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::projetHopital.Properties.Resources.médocs2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1020, 612);
+            this.ClientSize = new System.Drawing.Size(1020, 502);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtSeuil);
             this.Controls.Add(this.txtQuantite);
-            this.Controls.Add(this.txtNum);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.lblSeuil);
             this.Controls.Add(this.lblQuantite);
             this.Controls.Add(this.lblNom);
-            this.Controls.Add(this.lblNumero);
             this.Controls.Add(this.lblAjouterMedicament);
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.btnQuitter);
@@ -210,12 +184,10 @@
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.Label lblAjouterMedicament;
-        private System.Windows.Forms.Label lblNumero;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblQuantite;
         private System.Windows.Forms.Label lblSeuil;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.TextBox txtQuantite;
         private System.Windows.Forms.TextBox txtSeuil;
         private System.Windows.Forms.TextBox txtNom;
