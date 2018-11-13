@@ -29,5 +29,10 @@ namespace projetHopital
             this.Hide();
             accueil.ShowDialog();
         }
+
+        private void gestionDemandes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

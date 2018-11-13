@@ -31,7 +31,6 @@ namespace projetHopital
 
         }
 
-
         public static bool seDeconnecter() // coupe la connection a la bdd
         {
             if (laConnection != null)
@@ -43,6 +42,7 @@ namespace projetHopital
             }
             return true;
         }
+
         public static bool verifUtilisateur(string identifiant, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
         {
             bool test = false;

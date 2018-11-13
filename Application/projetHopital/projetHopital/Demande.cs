@@ -50,5 +50,10 @@ namespace projetHopital
                 listView1.Items.Add(itm);
             }
         }
+
+        private void btnSelectionner_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
