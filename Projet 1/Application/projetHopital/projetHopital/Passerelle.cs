@@ -16,6 +16,7 @@ namespace projetHopital
         {
             if (laConnection == null)
             {
+
                 laConnection = new SqlConnection();
                 laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
                 laConnection.Open();
