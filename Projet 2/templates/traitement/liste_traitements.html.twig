@@ -11,10 +11,15 @@
 <div class="example-wrapper">
     {%for traitement in traitements %}
 	<li>
-		{{traitement.id}} - {{traitement.date|date('d-m-y')}} - {{traitement.duree}} - {{traitement.NomPatient}}
+		ID : {{traitement.id}}<br/>
+		Date de début : {{traitement.date|date('d-m-y')}}<br/>
+		Durée du traitement : {{traitement.duree}}<br/>
+		Nom du patient : {{traitement.NomPatient}}<br/> 
+		<a href="{{path('modificationTraitement',{id:traitement.id})}}">modifier</a>
+		<a href="{{path('suppressionTraitement',{id:traitement.id})}}">supprimer</a>
 	</li>
 	{%else%}
-	Pas d'adhérent trouvé
+	Pas d'e traitement trouvé
 	{%endfor%}
 </div>
 {% endblock %}
