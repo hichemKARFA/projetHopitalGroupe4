@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medicament{%endblock %}
+
+{% block body %}
+
+{% endblock %}
+{% block test %}
+
+<ul>
+{%for unMedoc in medicaments%}
+			<li>{{unMedoc.libelle}} - {{unMedoc.id}}</li>
+	{%else%}
+	Pas de medicament trouvé
+	{%endfor%}
+</ul>
+
+{% endblock %}
+
