@@ -64,4 +64,52 @@ class TraitementController extends AbstractController
 		'form'=>$form->createView(),
 		));
 	}
+	/**
+	* @Route("modificationTraitement/{id}", name="modificationTraitement")
+	*/
+	public function modification($id, Request $request)
+	{
+		$em=$this->getDoctrine()->getManager();
+		$repository=$this->getDoctrine()->getRepository(Traitement::class);
+		$traitement=$repository->find($id);
+		$em=$this->getDoctrine()->getManager();
+		
+		$form = $this->createFormBuilder($traitement)
+				->add('date', DateType::class, array('label'=>'Date de début : '))
+				
+				->add('duree',IntegerType::class , array('label'=>'Durée : '))
+				->add('nom_patient',TextType::class , array('label'=>'Nom du patient : '))
+				->add('save', SubmitType::class, array('label'=>'Modifier le traitement'))
+				->getForm();
+		
+		
+		$form->handleRequest($request);
+		if($form->isSubmitted()&&$form->isValid())
+		{
+			$traitement = $form->getData();
+			$em=$this->getDoctrine()->getManager();
+			$em->persist($traitement);
+			$em->flush();
+			return $this->redirectToRoute('traitements');
+		}
+		return $this->render('traitement/modification.html.twig',array(
+		'form'=>$form->createView(),
+		));
+	}
+	
+	/**
+	* @Route("suppressionTraitement/{id}", name="suppressionTraitement")
+	*/
+	public function suppression($id)
+	{
+		$repository=$this->getDoctrine()->getRepository(Traitement::class);
+		$traitement=$repository->find($id);
+		$em=$this->getDoctrine()->getManager();
+		$em->remove($traitement);
+		$em->flush();
+		return $this->render('traitement/suppression.html.twig',[
+		'traitement'=>$traitement,
+		]);
+	}
 }
+
