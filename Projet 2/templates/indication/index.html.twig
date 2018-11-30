@@ -9,10 +9,10 @@
 
 <ul>
 {%for uneIndic in indications%}
-			<li>{{uneIndic.posologie}} - {{uneIndic.id}} <a href="{{path('modifIndication',{id:uneIndic.id})}}">modifier</a> 
+			<li>Indication numéro {{uneIndic.id}} - {{uneIndic.medicament.libelle}} - {{uneIndic.posologie}} - Traitement numéro {{uneIndic.traitement.id}} <a href="{{path('modifIndication',{id:uneIndic.id})}}">modifier</a> 
 			<a href="{{path('supprimerIndication',{id:uneIndic.id})}}">supprimer</a></li>
 	{%else%}
-	Pas de medicament trouvé
+	Pas de d'indication trouvé
 	{%endfor%}
 </ul>
 

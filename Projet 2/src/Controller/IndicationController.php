@@ -36,7 +36,7 @@ class IndicationController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($indication);
 			$em->flush(); 
-			return $this->redirectToRoute('indication');
+			return $this->redirectToRoute('indications');
 		}
 		return $this->render('indication/inscription.html.twig',array('form'=>$form->createView(),));
 	}
@@ -66,14 +66,14 @@ class IndicationController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($uneIndication);
 			$em->flush(); 
-			return $this->redirectToRoute('indication');
+			return $this->redirectToRoute('indications');
 		}
 		
 		return $this->render('indication/modification.html.twig',array('form'=>$form->createView(),));	
 
     }
 	/**
-     * @Route("/medicaments/supprimerIndication/{id}", name="supprimerIndication")  
+     * @Route("/indications/supprimerIndication/{id}", name="supprimerIndication")  
      */
 	public function supprimerIndication($id) 
 	{
@@ -84,7 +84,7 @@ class IndicationController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->remove($uneIndication);
 			$em->flush(); 
-			return $this->redirectToRoute('indication');
+			return $this->redirectToRoute('indications');
 		}
 		return $this->render('indication/suppression.html.twig');	
     }
