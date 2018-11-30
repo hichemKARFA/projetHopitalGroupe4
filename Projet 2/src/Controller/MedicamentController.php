@@ -10,7 +10,7 @@ use App\Form\MedicamentType;
 class MedicamentController extends AbstractController
 {
     /**
-     * @Route("/medicaments", name="medicaments")
+     * @Route("/afficherMedicaments", name="medicaments")
      */
     public function getMedicaments()
     {

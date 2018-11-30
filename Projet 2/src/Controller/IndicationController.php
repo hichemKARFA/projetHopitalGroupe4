@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 class IndicationController extends AbstractController
 {
     /**
-     * @Route("/indication", name="indication")
+     * @Route("/afficherIndications", name="indications")
      */
     public function getIndications()
     {
