@@ -2,16 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8">
+		<link rel="stylesheet" href="main.css" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
 {% block body %}{% endblock %}
-<p>
+<p class="menu">
 
-<a  href="/medicaments">liste des medicaments </a> 
-<a  href="/indication">liste des indications </a> 
-<a  href="/traitements">liste des traitements </a>
+
+<ul><a  class="marge" href="/medicaments">liste des medicaments </a> 
+
+<a class="marge"   href="/indication">liste des indications </a> 
+
+<a class="marge"  href="/traitements">liste des traitements </a>
+<br />
+<br/>
+<a class="marge"  href="/medicaments/inscription">ajouter un medicament </a>
+<a  href="/indications/ajouter">ajouter une indication </a></ul>
 </p>
 {% block test %}{% endblock %}
 

@@ -9,7 +9,7 @@
 
 <ul>
 {%for unMedoc in medicaments%}
-			<li>{{unMedoc.libelle}} - {{unMedoc.id}}</li>
+			<li>{{unMedoc.libelle}} - {{unMedoc.id}} <a href="{{path('modifIndication',{id:unMedoc.id})}}">modifier</a>   <a href="{{path('supprimerMedicament',{id:unMedoc.id})}}">supprimer</a></li> 
 	{%else%}
 	Pas de medicament trouvé
 	{%endfor%}
