@@ -8,14 +8,16 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Entity\Medicament;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class MedicamentType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('libelle')
-			->add('Enregistrer',SubmitType::class)
+            ->add('libelle',TextType::class , array('label'=>'Libelle : '))
+			
+			->add('Enregistrer',SubmitType::class , array('label'=>'ajouter un medicament '))
         ;
     }
 
