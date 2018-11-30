@@ -16,7 +16,6 @@ class MedicamentType extends AbstractType
     {
         $builder
             ->add('libelle',TextType::class , array('label'=>'Libelle : '))
-			
 			->add('Enregistrer',SubmitType::class , array('label'=>'ajouter un medicament '))
         ;
     }

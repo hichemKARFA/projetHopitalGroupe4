@@ -10,7 +10,7 @@ use App\Form\MedicamentType;
 class MedicamentController extends AbstractController
 {
     /**
-     * @Route("/afficherMedicaments", name="medicaments")
+     * @Route("/medicaments", name="medicaments")
      */
     public function getMedicaments()
     {
@@ -57,7 +57,7 @@ class MedicamentController extends AbstractController
 	/**
      * @Route("/medicaments/modifMedicament/{id}", name="modifMedicament")  
      */
-	public function modifAdherent($id,Request $request) 
+	public function modifMedicament($id,Request $request) 
 	{
 		$repository=$this->getDoctrine()->getRepository(Medicament::class);
 		$unMedicament=$repository->find($id); 
