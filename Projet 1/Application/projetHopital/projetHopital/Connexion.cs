@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace projetHopital
 {
     public partial class Connexion : Form
-    {
+    {       
         
         public Connexion()
         {
@@ -48,6 +48,7 @@ namespace projetHopital
             }
             else if (Passerelle.verifUtilisateur(txtIdentifiant.Text, txtMdp.Text))
             {
+                string nomUser = txtIdentifiant.Text;
                 MessageBox.Show("Bonjour " + txtIdentifiant.Text + "! Bienvenue sur l'application.");
                 if (Passerelle.getPharmacien(txtIdentifiant.Text, txtMdp.Text))
                 {
@@ -61,6 +62,7 @@ namespace projetHopital
                     this.Hide();
                     demande.ShowDialog();
                 }
+
 
             }
             else
@@ -83,6 +85,12 @@ namespace projetHopital
         private void txtIdentifiant_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public int getidUtilisateur()
+        {
+            string nomUser = txtIdentifiant.Text;
+            return Passerelle.getidUtilisateur(nomUser);
         }
     }
 }

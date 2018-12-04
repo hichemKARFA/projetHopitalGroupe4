@@ -30,14 +30,14 @@
         {
             this.lblAjoutDemande = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listeMedicaments = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnSelectionner = new System.Windows.Forms.Button();
             this.lblQuantite = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQtte = new System.Windows.Forms.TextBox();
             this.btnValider = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listMedocDemande = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,9 +50,10 @@
             // 
             this.lblAjoutDemande.AutoSize = true;
             this.lblAjoutDemande.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAjoutDemande.Location = new System.Drawing.Point(314, 9);
+            this.lblAjoutDemande.Location = new System.Drawing.Point(419, 11);
+            this.lblAjoutDemande.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAjoutDemande.Name = "lblAjoutDemande";
-            this.lblAjoutDemande.Size = new System.Drawing.Size(394, 42);
+            this.lblAjoutDemande.Size = new System.Drawing.Size(487, 54);
             this.lblAjoutDemande.TabIndex = 1;
             this.lblAjoutDemande.Text = "Ajouter une demande";
             this.lblAjoutDemande.Click += new System.EventHandler(this.lbldemandes_Click);
@@ -63,27 +64,29 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitter.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.White;
-            this.btnQuitter.Location = new System.Drawing.Point(832, 553);
+            this.btnQuitter.Location = new System.Drawing.Point(1109, 681);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(143, 48);
+            this.btnQuitter.Size = new System.Drawing.Size(191, 59);
             this.btnQuitter.TabIndex = 13;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // listView1
+            // listeMedicaments
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listeMedicaments.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(37, 127);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(420, 217);
-            this.listView1.TabIndex = 14;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listeMedicaments.FullRowSelect = true;
+            this.listeMedicaments.Location = new System.Drawing.Point(49, 156);
+            this.listeMedicaments.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listeMedicaments.MultiSelect = false;
+            this.listeMedicaments.Name = "listeMedicaments";
+            this.listeMedicaments.Size = new System.Drawing.Size(559, 266);
+            this.listeMedicaments.TabIndex = 14;
+            this.listeMedicaments.UseCompatibleStateImageBehavior = false;
+            this.listeMedicaments.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -103,9 +106,10 @@
             this.btnSelectionner.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSelectionner.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelectionner.ForeColor = System.Drawing.Color.White;
-            this.btnSelectionner.Location = new System.Drawing.Point(162, 443);
+            this.btnSelectionner.Location = new System.Drawing.Point(216, 545);
+            this.btnSelectionner.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSelectionner.Name = "btnSelectionner";
-            this.btnSelectionner.Size = new System.Drawing.Size(129, 48);
+            this.btnSelectionner.Size = new System.Drawing.Size(172, 59);
             this.btnSelectionner.TabIndex = 15;
             this.btnSelectionner.Text = "Ajouter";
             this.btnSelectionner.UseVisualStyleBackColor = false;
@@ -115,20 +119,22 @@
             // 
             this.lblQuantite.AutoSize = true;
             this.lblQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantite.Location = new System.Drawing.Point(67, 363);
+            this.lblQuantite.Location = new System.Drawing.Point(89, 447);
+            this.lblQuantite.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantite.Name = "lblQuantite";
-            this.lblQuantite.Size = new System.Drawing.Size(178, 42);
+            this.lblQuantite.Size = new System.Drawing.Size(222, 54);
             this.lblQuantite.TabIndex = 16;
             this.lblQuantite.Text = "Quantité:";
             // 
-            // textBox1
+            // txtQtte
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(286, 370);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(99, 38);
-            this.textBox1.TabIndex = 17;
+            this.txtQtte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtQtte.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQtte.Location = new System.Drawing.Point(381, 455);
+            this.txtQtte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQtte.Name = "txtQtte";
+            this.txtQtte.Size = new System.Drawing.Size(131, 46);
+            this.txtQtte.TabIndex = 17;
             // 
             // btnValider
             // 
@@ -136,27 +142,30 @@
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.White;
-            this.btnValider.Location = new System.Drawing.Point(631, 443);
+            this.btnValider.Location = new System.Drawing.Point(841, 545);
+            this.btnValider.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnValider.Name = "btnValider";
-            this.btnValider.Size = new System.Drawing.Size(310, 48);
+            this.btnValider.Size = new System.Drawing.Size(413, 59);
             this.btnValider.TabIndex = 19;
-            this.btnValider.Text = "Valider la commande";
+            this.btnValider.Text = "Envoyer";
             this.btnValider.UseVisualStyleBackColor = false;
             // 
-            // listView2
+            // listMedocDemande
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listMedocDemande.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listView2.FullRowSelect = true;
-            this.listView2.Location = new System.Drawing.Point(555, 127);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(420, 217);
-            this.listView2.TabIndex = 21;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.listMedocDemande.FullRowSelect = true;
+            this.listMedocDemande.Location = new System.Drawing.Point(740, 156);
+            this.listMedocDemande.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listMedocDemande.MultiSelect = false;
+            this.listMedocDemande.Name = "listMedocDemande";
+            this.listMedocDemande.Size = new System.Drawing.Size(559, 266);
+            this.listMedocDemande.TabIndex = 21;
+            this.listMedocDemande.UseCompatibleStateImageBehavior = false;
+            this.listMedocDemande.View = System.Windows.Forms.View.Details;
+            this.listMedocDemande.SelectedIndexChanged += new System.EventHandler(this.listMedocDemande_SelectedIndexChanged);
             // 
             // columnHeader3
             // 
@@ -181,9 +190,10 @@
             this.btnRetirer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetirer.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetirer.ForeColor = System.Drawing.Color.White;
-            this.btnRetirer.Location = new System.Drawing.Point(717, 363);
+            this.btnRetirer.Location = new System.Drawing.Point(956, 447);
+            this.btnRetirer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRetirer.Name = "btnRetirer";
-            this.btnRetirer.Size = new System.Drawing.Size(129, 48);
+            this.btnRetirer.Size = new System.Drawing.Size(172, 59);
             this.btnRetirer.TabIndex = 23;
             this.btnRetirer.Text = "Retirer";
             this.btnRetirer.UseVisualStyleBackColor = false;
@@ -192,9 +202,10 @@
             // 
             this.lblMedicaments.AutoSize = true;
             this.lblMedicaments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedicaments.Location = new System.Drawing.Point(147, 86);
+            this.lblMedicaments.Location = new System.Drawing.Point(196, 106);
+            this.lblMedicaments.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMedicaments.Name = "lblMedicaments";
-            this.lblMedicaments.Size = new System.Drawing.Size(193, 20);
+            this.lblMedicaments.Size = new System.Drawing.Size(232, 25);
             this.lblMedicaments.TabIndex = 24;
             this.lblMedicaments.Text = "Liste des médicaments";
             // 
@@ -202,28 +213,30 @@
             // 
             this.lblCommande.AutoSize = true;
             this.lblCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommande.Location = new System.Drawing.Point(701, 86);
+            this.lblCommande.Location = new System.Drawing.Point(935, 106);
+            this.lblCommande.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCommande.Name = "lblCommande";
-            this.lblCommande.Size = new System.Drawing.Size(132, 20);
+            this.lblCommande.Size = new System.Drawing.Size(159, 25);
             this.lblCommande.TabIndex = 25;
             this.lblCommande.Text = "Votre demande";
             // 
             // Demande
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 623);
+            this.ClientSize = new System.Drawing.Size(1341, 767);
             this.Controls.Add(this.lblCommande);
             this.Controls.Add(this.lblMedicaments);
             this.Controls.Add(this.btnRetirer);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.listMedocDemande);
             this.Controls.Add(this.btnValider);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQtte);
             this.Controls.Add(this.lblQuantite);
             this.Controls.Add(this.btnSelectionner);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listeMedicaments);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.lblAjoutDemande);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Demande";
             this.Text = "Demande";
             this.Load += new System.EventHandler(this.Demande_Load);
@@ -236,14 +249,14 @@
 
         private System.Windows.Forms.Label lblAjoutDemande;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listeMedicaments;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button btnSelectionner;
         private System.Windows.Forms.Label lblQuantite;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQtte;
         private System.Windows.Forms.Button btnValider;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listMedocDemande;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;

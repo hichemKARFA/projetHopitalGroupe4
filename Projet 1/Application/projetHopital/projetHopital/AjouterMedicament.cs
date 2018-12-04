@@ -38,7 +38,7 @@ namespace projetHopital
         private void btnValider_Click(object sender, EventArgs e)
         {
             bool test;
-            Medicament unMedicament = new Medicament(Passerelle.trouverId(), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
+            Medicament unMedicament = new Medicament(Passerelle.trouverId("Medicaments"), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
             test=Passerelle.ajoutMedicament(unMedicament);
             if (test==true)
             {

@@ -44,6 +44,8 @@ namespace projetHopital
             return true;
         }
 
+       
+            
         public static bool verifUtilisateur(string identifiant, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
         {
             bool test = false;
@@ -54,9 +56,9 @@ namespace projetHopital
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read())
             {
-                string idBdd = (string)unJeuResultat["login"];
+                string loginBdd = (string)unJeuResultat["login"];
                 string mdpBdd = (string)unJeuResultat["mdp"];
-                if (identifiant == idBdd && mdp == mdpBdd)
+                if (identifiant == loginBdd && mdp == mdpBdd)
                 {
                     test = true;
                 }
@@ -105,6 +107,24 @@ namespace projetHopital
             seDeconnecter();
             return test;
         }
+        public static void creerDemande(int pId, int pUtilisateur)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "INSERT INTO Demande VALUES=(" + pId +"," + pUtilisateur +",1);";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
+        public static void contenuDemmande(int pId, int pMedicament, int pQtte)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "INSERT INTO ContenuDemande VALUES=("+ pId +","+ pMedicament +","+ pQtte +");";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
 
         public static void faireCommande(int id,int quantite)
         {
@@ -115,11 +135,12 @@ namespace projetHopital
             maCommande.ExecuteNonQuery();
             seDeconnecter();
         }
+
         
          public static bool ajoutMedicament(Medicament unMedicament)
         {
             bool test = false;
-            int id=trouverId();
+            int id=trouverId("Medicaments");
             seConnecter();
             SqlCommand maCommande;
             String requete = "Insert into medicaments values ("+unMedicament.getId()+",'"+unMedicament.getNom()+"',"+unMedicament.getStock()+","+unMedicament.getSeuil()+")";
@@ -130,13 +151,13 @@ namespace projetHopital
             return test;
         }
 
-        public static int trouverId()
+        public static int trouverId(string pnomTable)
          {
             int test=0, id;
             int resultat=0;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "Select id from medicaments";
+            String requete = "Select id FROM "+ pnomTable+";";
             maCommande = new SqlCommand(requete, laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read()&&resultat==0)
@@ -205,6 +226,25 @@ namespace projetHopital
             seDeconnecter();
             test = true;
             return test;
+        }
+
+        public static int getidUtilisateur(string pLogin)
+        {
+            seConnecter();
+            int id = 0;
+            SqlCommand maCommande;
+            String requete = "SELECT id FROM Utilisateurs WHERE login=" + pLogin + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int idUtilisateur = (int)unJeuResultat["id"];
+                id = idUtilisateur;
+
+            }
+            seDeconnecter();
+            return id;
         }
     }
 }

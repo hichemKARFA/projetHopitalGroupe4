@@ -112,3 +112,19 @@ C:\Users\sio2018\Documents\ProjetPPE\projetHopitalGroupe4\Projet 1\Application\p
 C:\Users\sio2018\Documents\ProjetPPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
 C:\Users\sio2018\Documents\ProjetPPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
 C:\Users\sio2018\Documents\ProjetPPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csprojResolveAssemblyReference.cache
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Accueil.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.AjouterMedicament.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Commande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Demande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Connexion.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.ModifierStock.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
