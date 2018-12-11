@@ -23,7 +23,7 @@ class TraitementController extends AbstractController
         ]);
     }
 	/**
-     * @Route("/afficherTraitements", name="traitements")
+     * @Route("/traitements", name="traitements")
      */
 	public function getTraitements()
 	{

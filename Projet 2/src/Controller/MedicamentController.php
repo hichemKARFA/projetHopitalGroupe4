@@ -10,7 +10,7 @@ use App\Form\MedicamentType;
 class MedicamentController extends AbstractController
 {
     /**
-     * @Route("/afficherMedicaments", name="medicaments")
+     * @Route("/medicaments", name="medicaments")
      */
     public function getMedicaments()
     {
@@ -28,8 +28,8 @@ class MedicamentController extends AbstractController
 	public function ajouterMedicament(Request $request) // ici la route medicament/inscription ne peut pas marcher car /medicament/{id}  ici le {id} est une variable
 	{
 		$medicament=new Medicament(); // je crée un medicament
-		$form=$this->createForm(MedicamentType::class,$medicament); // je crée un formulaire les données seront plus tard enregistrée dans l'objet medicament
-		$form->handleRequest($request);// recupere les infos saisie par l'utilisateur 
+		$form=$this->createForm(MedicamentType::class,$medicament); // je créée un formulaire les données seront plus tard enregistrée dans l'objet medicament
+		$form->handleRequest($request);// recupere les infos saisies par l'utilisateur 
 		if($form->isSubmitted() && $form->isValid())
 		{
 			$medicament=$form->getData();
