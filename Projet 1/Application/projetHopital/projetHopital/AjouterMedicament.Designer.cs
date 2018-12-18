@@ -49,7 +49,7 @@
             this.btnQuitter.Location = new System.Drawing.Point(865, 442);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 48);
-            this.btnQuitter.TabIndex = 5;
+            this.btnQuitter.TabIndex = 10;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
@@ -63,7 +63,7 @@
             this.btnRetour.Location = new System.Drawing.Point(715, 442);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(143, 48);
-            this.btnRetour.TabIndex = 6;
+            this.btnRetour.TabIndex = 9;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = false;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
@@ -76,7 +76,7 @@
             this.lblAjouterMedicament.Location = new System.Drawing.Point(307, 9);
             this.lblAjouterMedicament.Name = "lblAjouterMedicament";
             this.lblAjouterMedicament.Size = new System.Drawing.Size(421, 42);
-            this.lblAjouterMedicament.TabIndex = 7;
+            this.lblAjouterMedicament.TabIndex = 1;
             this.lblAjouterMedicament.Text = "Ajouter un médicament";
             this.lblAjouterMedicament.Click += new System.EventHandler(this.lblAjouterMedicament_Click);
             // 
@@ -88,7 +88,7 @@
             this.lblNom.Location = new System.Drawing.Point(65, 118);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(99, 42);
-            this.lblNom.TabIndex = 9;
+            this.lblNom.TabIndex = 2;
             this.lblNom.Text = "Nom";
             // 
             // lblQuantite
@@ -99,7 +99,7 @@
             this.lblQuantite.Location = new System.Drawing.Point(65, 230);
             this.lblQuantite.Name = "lblQuantite";
             this.lblQuantite.Size = new System.Drawing.Size(167, 42);
-            this.lblQuantite.TabIndex = 10;
+            this.lblQuantite.TabIndex = 4;
             this.lblQuantite.Text = "Quantité";
             // 
             // lblSeuil
@@ -110,7 +110,7 @@
             this.lblSeuil.Location = new System.Drawing.Point(65, 342);
             this.lblSeuil.Name = "lblSeuil";
             this.lblSeuil.Size = new System.Drawing.Size(106, 42);
-            this.lblSeuil.TabIndex = 11;
+            this.lblSeuil.TabIndex = 6;
             this.lblSeuil.Text = "Seuil";
             // 
             // btnValider
@@ -122,7 +122,7 @@
             this.btnValider.Location = new System.Drawing.Point(400, 442);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(180, 48);
-            this.btnValider.TabIndex = 12;
+            this.btnValider.TabIndex = 8;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
@@ -134,7 +134,7 @@
             this.txtQuantite.Location = new System.Drawing.Point(280, 237);
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(150, 38);
-            this.txtQuantite.TabIndex = 14;
+            this.txtQuantite.TabIndex = 5;
             // 
             // txtSeuil
             // 
@@ -143,7 +143,7 @@
             this.txtSeuil.Location = new System.Drawing.Point(280, 349);
             this.txtSeuil.Name = "txtSeuil";
             this.txtSeuil.Size = new System.Drawing.Size(150, 38);
-            this.txtSeuil.TabIndex = 15;
+            this.txtSeuil.TabIndex = 7;
             // 
             // txtNom
             // 
@@ -152,7 +152,7 @@
             this.txtNom.Location = new System.Drawing.Point(280, 125);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(382, 38);
-            this.txtNom.TabIndex = 16;
+            this.txtNom.TabIndex = 3;
             // 
             // AjouterMedicament
             // 

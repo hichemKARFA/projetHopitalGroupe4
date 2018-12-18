@@ -78,8 +78,7 @@ namespace projetHopital
                 itm = new ListViewItem(arr);
                 listView1.Items.Add(itm);
             }
-            
-            
+ 
         }
     }
 }

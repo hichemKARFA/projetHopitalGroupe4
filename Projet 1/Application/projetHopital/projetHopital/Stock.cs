@@ -67,13 +67,27 @@ namespace projetHopital
             ModifierStock modif = new ModifierStock(id);
             this.Hide();
             modif.ShowDialog();
-
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-            Passerelle.supprimerMedicament(id);
+            bool test=false;
+            int medicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            test = Passerelle.verifContenuDemande(medicament);
+            if (test == true)
+            {
+                DialogResult result1 = MessageBox.Show("La supression de ce médicament entrainera la suppression des demandes dans lesquels le médicament est present.\n\nVoulez vous continuer ?","Avertissement",MessageBoxButtons.YesNo);
+                if(result1==DialogResult.Yes)
+                {
+                    Passerelle.supprimerContenuDemande(medicament);
+                    Passerelle.supprimerDemande();
+                    Passerelle.supprimerMedicament(medicament);
+                }  
+            }
+            else
+            {
+                Passerelle.supprimerMedicament(medicament);
+            }
             listView1.Items.Clear();
             ArrayList lesMedicaments = new ArrayList();
             lesMedicaments = Passerelle.listeMedicaments();
@@ -87,6 +101,7 @@ namespace projetHopital
                 arr[3] = unMedicament.getSeuil() + "";
                 itm = new ListViewItem(arr);
                 listView1.Items.Add(itm);
+                ;
             }
         }
     }

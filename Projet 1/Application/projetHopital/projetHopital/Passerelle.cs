@@ -231,20 +231,51 @@ namespace projetHopital
         public static int getidUtilisateur(string pLogin)
         {
             seConnecter();
-            int id = 0;
             SqlCommand maCommande;
-            String requete = "SELECT id FROM Utilisateurs WHERE login=" + pLogin + ";";
+            String requete = "SELECT id FROM Utilisateurs WHERE login='" + pLogin + "';";
             maCommande = new SqlCommand(requete, laConnection);
-            maCommande.ExecuteNonQuery();
-            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            while (unJeuResultat.Read())
-            {
-                int idUtilisateur = (int)unJeuResultat["id"];
-                id = idUtilisateur;
-
-            }
+            int id = (int)maCommande.ExecuteScalar();
             seDeconnecter();
             return id;
+        }
+
+        public static bool verifContenuDemande(int medicament)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT COUNT(demande) FROM ContenuDemande WHERE medicament=" + medicament + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            int nbLignes=(int)maCommande.ExecuteScalar();
+            bool test = false;
+            if (nbLignes != 0)
+            {
+                test = true;
+            }
+            seDeconnecter();
+            return test;
+        }
+
+        public static bool supprimerContenuDemande(int medicament)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "DELETE FROM ContenuDemande WHERE medicament=" + medicament + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+            bool test=true;
+            return test;
+        }
+        public static bool supprimerDemande()
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "DELETE FROM Demandes WHERE ID NOT IN (SELECT demande FROM ContenuDemande);";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+            bool test = true;
+            return test;
         }
     }
 }

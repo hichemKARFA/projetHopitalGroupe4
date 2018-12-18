@@ -45,10 +45,10 @@
             // 
             this.lblCommande.AutoSize = true;
             this.lblCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommande.Location = new System.Drawing.Point(335, 9);
+            this.lblCommande.Location = new System.Drawing.Point(267, 9);
             this.lblCommande.Name = "lblCommande";
             this.lblCommande.Size = new System.Drawing.Size(423, 42);
-            this.lblCommande.TabIndex = 10;
+            this.lblCommande.TabIndex = 1;
             this.lblCommande.Text = "Ajouter une commande";
             // 
             // btnRetour
@@ -60,7 +60,7 @@
             this.btnRetour.Location = new System.Drawing.Point(689, 547);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(143, 48);
-            this.btnRetour.TabIndex = 11;
+            this.btnRetour.TabIndex = 6;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = false;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
@@ -74,7 +74,7 @@
             this.btnQuitter.Location = new System.Drawing.Point(857, 547);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 48);
-            this.btnQuitter.TabIndex = 12;
+            this.btnQuitter.TabIndex = 7;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
@@ -85,10 +85,10 @@
             this.btnValider.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnValider.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnValider.ForeColor = System.Drawing.Color.White;
-            this.btnValider.Location = new System.Drawing.Point(609, 454);
+            this.btnValider.Location = new System.Drawing.Point(611, 460);
             this.btnValider.Name = "btnValider";
             this.btnValider.Size = new System.Drawing.Size(143, 48);
-            this.btnValider.TabIndex = 14;
+            this.btnValider.TabIndex = 5;
             this.btnValider.Text = "Valider";
             this.btnValider.UseVisualStyleBackColor = false;
             this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
@@ -97,20 +97,20 @@
             // 
             this.lblQuantité.AutoSize = true;
             this.lblQuantité.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantité.Location = new System.Drawing.Point(221, 454);
+            this.lblQuantité.Location = new System.Drawing.Point(221, 460);
             this.lblQuantité.Name = "lblQuantité";
             this.lblQuantité.Size = new System.Drawing.Size(189, 42);
-            this.lblQuantité.TabIndex = 16;
+            this.lblQuantité.TabIndex = 3;
             this.lblQuantité.Text = "Quantité :";
             // 
             // txtQuantite
             // 
             this.txtQuantite.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtQuantite.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantite.Location = new System.Drawing.Point(439, 458);
+            this.txtQuantite.Location = new System.Drawing.Point(435, 467);
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(117, 38);
-            this.txtQuantite.TabIndex = 18;
+            this.txtQuantite.TabIndex = 4;
             // 
             // listView1
             // 
@@ -120,11 +120,11 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(70, 60);
+            this.listView1.Location = new System.Drawing.Point(131, 60);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(682, 388);
-            this.listView1.TabIndex = 19;
+            this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);

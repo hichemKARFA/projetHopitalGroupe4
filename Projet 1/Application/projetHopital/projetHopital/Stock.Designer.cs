@@ -61,7 +61,7 @@
             this.btnModifier.Location = new System.Drawing.Point(791, 250);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(126, 48);
-            this.btnModifier.TabIndex = 2;
+            this.btnModifier.TabIndex = 3;
             this.btnModifier.Text = "Modifier";
             this.btnModifier.UseVisualStyleBackColor = false;
             this.btnModifier.Click += new System.EventHandler(this.btnModifier_Click);
@@ -75,7 +75,7 @@
             this.btnRetour.Location = new System.Drawing.Point(625, 516);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(143, 48);
-            this.btnRetour.TabIndex = 3;
+            this.btnRetour.TabIndex = 6;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = false;
             this.btnRetour.Click += new System.EventHandler(this.btnRetour_Click);
@@ -89,7 +89,7 @@
             this.btnQuitter.Location = new System.Drawing.Point(791, 516);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(143, 48);
-            this.btnQuitter.TabIndex = 4;
+            this.btnQuitter.TabIndex = 7;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
@@ -120,7 +120,7 @@
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(682, 388);
-            this.listView1.TabIndex = 6;
+            this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
@@ -157,7 +157,7 @@
             this.btnSupprimer.Location = new System.Drawing.Point(775, 329);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(159, 48);
-            this.btnSupprimer.TabIndex = 7;
+            this.btnSupprimer.TabIndex = 4;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
             this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
