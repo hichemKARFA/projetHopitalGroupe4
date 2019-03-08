@@ -111,7 +111,7 @@ namespace projetHopital
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "INSERT INTO Demande VALUES=(" + pId +"," + pUtilisateur +",1);";
+            String requete = "INSERT INTO Demandes VALUES (" + pId +"," + pUtilisateur +",1);";
             maCommande = new SqlCommand(requete, laConnection);
             maCommande.ExecuteNonQuery();
             seDeconnecter();
@@ -177,6 +177,16 @@ namespace projetHopital
             return resultat;
          }
 
+        public static int trouverIdMax(string pnomTable)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Select Max(id) FROM " + pnomTable + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            int id = (int)maCommande.ExecuteScalar();
+            return id;
+        }
+
         public static bool supprimerMedicament(int id)
         {
             bool test = false;
@@ -238,6 +248,7 @@ namespace projetHopital
             seDeconnecter();
             return id;
         }
+        
 
         public static bool verifContenuDemande(int medicament)
         {

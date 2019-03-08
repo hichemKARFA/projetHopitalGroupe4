@@ -13,8 +13,10 @@ namespace projetHopital
 {
     public partial class Demande : Form
     {
-        public Demande()
+        private int idUtilisateur;
+        public Demande(int pIdUtilisateur)
         {
+            idUtilisateur = pIdUtilisateur;
             InitializeComponent();
         }
 
@@ -54,19 +56,10 @@ namespace projetHopital
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
             int quantite = int.Parse(txtQtte.Text);  
-            int idDemande = Passerelle.trouverId("Demande"); // Récupère la première id disponible pour la table demande
+            int idDemande = Passerelle.trouverIdMax("Demandes")+1; // Récupère id max pour créer la demande
             string[] leMedicament = new string[2];
 
-            ArrayList lesMedicaments = new ArrayList();
-            lesMedicaments = Passerelle.listeMedicaments();
-            foreach (Medicament unMedicament in lesMedicaments) // Affichage de chaque médicament
-            {
-                ListViewItem itm;
-                leMedicament[0] = unMedicament.getId() + "";
-                leMedicament[1] = unMedicament.getNom();
-                itm = new ListViewItem(leMedicament);
-                listeMedicaments.Items.Add(itm);
-            }
+
             if (txtQtte.Text == String.Empty || leMedicament[0] == String.Empty || leMedicament[1] == String.Empty)
             {
                 MessageBox.Show("Vous n'avez pas saisi de médicament ou de quantité");
@@ -75,9 +68,8 @@ namespace projetHopital
             {
                 int id = int.Parse(listeMedicaments.SelectedItems[0].SubItems[0].Text);
                 Connexion uneConnexion = new Connexion();
-                Passerelle.creerDemande(idDemande, uneConnexion.getidUtilisateur());
+                Passerelle.creerDemande(idDemande, idUtilisateur);
                 txtQtte.Text = "";
-                listeMedicaments.Items.Clear();
                 
                
             }
@@ -86,6 +78,11 @@ namespace projetHopital
         }
 
         private void listMedocDemande_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listeMedicaments_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
