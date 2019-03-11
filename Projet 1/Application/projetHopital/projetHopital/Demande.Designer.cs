@@ -137,6 +137,7 @@
             this.txtQtte.Name = "txtQtte";
             this.txtQtte.Size = new System.Drawing.Size(131, 46);
             this.txtQtte.TabIndex = 17;
+            this.txtQtte.TextChanged += new System.EventHandler(this.txtQtte_TextChanged);
             // 
             // btnValider
             // 
@@ -151,6 +152,7 @@
             this.btnValider.TabIndex = 19;
             this.btnValider.Text = "Envoyer";
             this.btnValider.UseVisualStyleBackColor = false;
+            this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
             // 
             // listMedocDemande
             // 
@@ -200,6 +202,7 @@
             this.btnRetirer.TabIndex = 23;
             this.btnRetirer.Text = "Retirer";
             this.btnRetirer.UseVisualStyleBackColor = false;
+            this.btnRetirer.Click += new System.EventHandler(this.btnRetirer_Click);
             // 
             // lblMedicaments
             // 
