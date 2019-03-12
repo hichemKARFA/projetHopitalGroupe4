@@ -56,29 +56,29 @@ namespace projetHopital
 
         private void btnSelectionner_Click(object sender, EventArgs e)
         {
+            int idMedicament = int.Parse(listeMedicaments.SelectedItems[0].SubItems[0].Text);
             int quantite = int.Parse(txtQtte.Text);  
             string[] leMedicament = new string[2];
 
+            listMedocDemande.Items.Clear();    //Affichage du dictionnaire avec un nouvel élément
+            Medicament unMedicament;
+            unMedicament = Passerelle.trouverMedicament(idMedicament);  //Recherche d'un médicament dans la BDD grâce à son id
+            string nomMedicament = unMedicament.getNom(); //Attribution de valeur aux variables
+            int stockMedicament = unMedicament.getStock();
+            int seuilMedicament = unMedicament.getSeuil();
+            unMedicament = new Medicament(idMedicament, nomMedicament, stockMedicament, seuilMedicament);
 
             if (txtQtte.Text == String.Empty || leMedicament[0] == String.Empty || leMedicament[1] == String.Empty)
             {
                 MessageBox.Show("Vous n'avez pas saisi de médicament ou de quantité");
             }
+
             else
             {
-                listMedocDemande.Items.Clear();    //Affichage du dictionnaire avec un nouvel élément
-                Medicament unMedicament;
-                int idMedicament = int.Parse(listeMedicaments.SelectedItems[0].SubItems[0].Text);
-                unMedicament = Passerelle.trouverMedicament(idMedicament);  //Recherche d'un médicament dans la BDD grâce à son id
-                string nomMedicament = unMedicament.getNom(); //Attribution de valeur aux variables
-                int stockMedicament = unMedicament.getStock();
-                int seuilMedicament = unMedicament.getSeuil();
-                unMedicament = new Medicament(idMedicament, nomMedicament, stockMedicament, seuilMedicament);
-                
                 int QtteMedicament = int.Parse(txtQtte.Text);
-                contenuDemande.Add(unMedicament, QtteMedicament);
+                
                 txtQtte.Text = "";
-
+                contenuDemande.Add(unMedicament, QtteMedicament);
                 foreach (KeyValuePair<Medicament, int> value in contenuDemande)
                 {
                     string[] monContenu = new string[3];
@@ -90,10 +90,8 @@ namespace projetHopital
                     monContenu[2] = contenuDemande[unMedicament] + "";
                     itm = new ListViewItem(monContenu);
                     listMedocDemande.Items.Add(itm);
-                }            
+                }                          
             }
-            
-            
         }
 
         private void listMedocDemande_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,23 +111,48 @@ namespace projetHopital
 
         private void btnValider_Click(object sender, EventArgs e)
         {
+            
             int idDemande = Passerelle.trouverIdMax("Demandes") + 1; // Récupère id max pour créer la demande
             int id = int.Parse(listeMedicaments.SelectedItems[0].SubItems[0].Text);
             Connexion uneConnexion = new Connexion();
             Passerelle.creerDemande(idDemande, idUtilisateur);   //Création d'une nouvelle demande avec comme etat 'En attente' par défaut
+            foreach (KeyValuePair<Medicament, int> value in contenuDemande)
+            {
+                int idMedicament = value.Key.getId();
+                int qtte = value.Value;
+                Passerelle.AjouterContenuDemande(idDemande, idMedicament, qtte);
+            }
+           
+            MessageBox.Show("Votre demande a bien été envoyée en pharmacie.");
+            listMedocDemande.Items.Clear();
+            contenuDemande.Clear();
         }
 
         private void btnRetirer_Click(object sender, EventArgs e)
         {
-
-            /*int idMedicament = int.Parse(listMedocDemande.SelectedItems[0].SubItems[0].Text);
-
-                if(contenuDemande.Values.Key.getId()== idMedicament)
+            Medicament leMedicament=null;
+            int idMedicament = int.Parse(listMedocDemande.SelectedItems[0].SubItems[0].Text);
+            foreach (Medicament unMedicament in contenuDemande.Keys)
+            {
+                if(idMedicament == unMedicament.getId())
                 {
-                    contenuDemande.Remove(value.Key);
+                    leMedicament = unMedicament;
                 }
-
-            listMedocDemande.Items.Clear();*/
+            }
+            contenuDemande.Remove(leMedicament);
+            listMedocDemande.Items.Clear();
+            foreach (KeyValuePair<Medicament, int> value in contenuDemande)
+            {
+                string[] monContenu = new string[3];
+                ListViewItem itm;
+                leMedicament = value.Key;
+                string uneId = leMedicament.getId() + "";
+                monContenu[0] = uneId;
+                monContenu[1] = leMedicament.getNom();
+                monContenu[2] = contenuDemande[leMedicament] + "";
+                itm = new ListViewItem(monContenu);
+                listMedocDemande.Items.Add(itm);
+            }            
         }
     }
 }

@@ -116,15 +116,35 @@ namespace projetHopital
             maCommande.ExecuteNonQuery();
             seDeconnecter();
         }
-        public static void contenuDemmande(int pId, int pMedicament, int pQtte)
+        public static void AjouterContenuDemande(int pId, int pMedicament, int pQtte)
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "INSERT INTO ContenuDemande VALUES=("+ pId +","+ pMedicament +","+ pQtte +");";
+            String requete = "INSERT INTO ContenuDemande VALUES("+ pId +","+ pMedicament +","+ pQtte +");";
             maCommande = new SqlCommand(requete, laConnection);
             maCommande.ExecuteNonQuery();
             seDeconnecter();
         }
+
+        /*public static ArrayList getDemandes() // donne la liste des medicaments        //// A VOIR EN GROUPE ////
+        {
+            ArrayList lesDemandes = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "select Demandes.id, Utilisateurs.nom, Etat.libelle from Demandes JOIN Utilisateurs on Utilisateurs.id = Demandes.utilisateur JOIN Etat ON Demandes.etat = Etat.id";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int id = (int)unJeuResultat["Demandes.id"];
+                string nom = (string)unJeuResultat["Utilisateurs.nom"];
+                string etat = (string)unJeuResultat["Etat.libelle"];
+                Demande uneDemande = new Demande(id,nom,etat);
+                lesMedicaments.Add(unMedicament);
+            }
+            seDeconnecter();
+            return lesMedicaments;
+        }*/
 
         public static void faireCommande(int id,int quantite)
         {
@@ -180,10 +200,15 @@ namespace projetHopital
         public static int trouverIdMax(string pnomTable)
         {
             seConnecter();
+            int id = 0;
             SqlCommand maCommande;
             String requete = "Select Max(id) FROM " + pnomTable + ";";
             maCommande = new SqlCommand(requete, laConnection);
-            int id = (int)maCommande.ExecuteScalar();
+           
+            if(maCommande.ExecuteScalar()!=null)
+            {
+                id = (int)maCommande.ExecuteScalar();
+            }
             return id;
         }
 
