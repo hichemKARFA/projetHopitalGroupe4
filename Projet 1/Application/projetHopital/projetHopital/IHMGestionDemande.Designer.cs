@@ -30,8 +30,8 @@
         {
             this.listView1 = new System.Windows.Forms.ListView();
             this.Numéro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Etat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Infirmier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Etat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblCommande = new System.Windows.Forms.Label();
             this.btnRetour = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
@@ -62,19 +62,19 @@
             this.Numéro.Text = "Numéro";
             this.Numéro.Width = 108;
             // 
-            // Etat
-            // 
-            this.Etat.DisplayIndex = 1;
-            this.Etat.Text = "Etat";
-            this.Etat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Etat.Width = 151;
-            // 
             // Infirmier
             // 
             this.Infirmier.DisplayIndex = 2;
             this.Infirmier.Text = "Infirmier";
             this.Infirmier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Infirmier.Width = 195;
+            // 
+            // Etat
+            // 
+            this.Etat.DisplayIndex = 1;
+            this.Etat.Text = "Etat";
+            this.Etat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Etat.Width = 151;
             // 
             // lblCommande
             // 
@@ -168,6 +168,7 @@
             this.btnHistorique.TabIndex = 21;
             this.btnHistorique.Text = "Historique";
             this.btnHistorique.UseVisualStyleBackColor = false;
+            this.btnHistorique.Click += new System.EventHandler(this.btnHistorique_Click);
             // 
             // gestionDemandes
             // 
