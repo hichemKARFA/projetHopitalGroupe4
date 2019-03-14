@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContenuDemande.cs" />
     <Compile Include="Demande.cs" />
     <Compile Include="IHMAccueil.cs">
       <SubType>Form</SubType>
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="IHMCommande.Designer.cs">
       <DependentUpon>IHMCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMContenuDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMContenuDemande.Designer.cs">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
     </Compile>
     <Compile Include="IHMDemande.cs">
       <SubType>Form</SubType>
@@ -105,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IHMCommande.resx">
       <DependentUpon>IHMCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMContenuDemande.resx">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IHMDemande.resx">
       <DependentUpon>IHMDemande.cs</DependentUpon>

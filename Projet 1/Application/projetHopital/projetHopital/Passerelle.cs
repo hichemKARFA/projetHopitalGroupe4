@@ -218,7 +218,6 @@ namespace projetHopital
         {
             seConnecter();
             bool test=false;
-            int id=0;
             SqlCommand maCommande;
             String requete = "Select count(id) FROM demandes";
             maCommande = new SqlCommand(requete, laConnection);
@@ -342,6 +341,18 @@ namespace projetHopital
             maCommande.ExecuteNonQuery();
             seDeconnecter();
         }
+
+        public static int verifEtatDemande(int pId)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Select etat from demandes WHERE id=" + pId + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            int etat = (int)maCommande.ExecuteScalar();
+            seDeconnecter();
+            return etat;
+        }
+
         public static void AccepterDemande(int pId)
         {
             seConnecter();
@@ -383,6 +394,25 @@ namespace projetHopital
             {
                 int id = (int)unJeuResultat["medicament"];
                 Medicament unMedicament = new Medicament(id, null, 0, 0);
+                lesMedicaments.Add(unMedicament);
+            }
+            seDeconnecter();
+            return lesMedicaments;
+        }
+
+        public static ArrayList getContenuDemande(int pIdDemande)
+        {
+            ArrayList lesMedicaments = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "select nom, quantite from ContenuDemande join Medicaments on Medicaments.id=ContenuDemande.medicament WHERE demande=" + pIdDemande + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                string medicament = (string)unJeuResultat["nom"];
+                int quantite = (int)unJeuResultat["quantite"];
+                ContenuDemande unMedicament = new ContenuDemande(medicament, quantite);
                 lesMedicaments.Add(unMedicament);
             }
             seDeconnecter();

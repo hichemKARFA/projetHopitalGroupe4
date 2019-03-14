@@ -57,34 +57,39 @@ namespace projetHopital
             ArrayList lesDemandes = new ArrayList();
             lesDemandes = Passerelle.getDemandes();
             int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-            int idMedicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-            foreach (Demande maDemande in lesDemandes)
+
+            //IF A SUPPRIMER QUAND HISTORIQUE DEVELOPPE
+            if(Passerelle.verifEtatDemande(id)==2)
             {
-                if(maDemande.getId() == id)
+                int idMedicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+                foreach (Demande maDemande in lesDemandes)
                 {
-                    ArrayList lesMedicaments;
-                    lesMedicaments = Passerelle.listeMedicamentsParDemande(id);
-                    foreach(Medicament leMedicament in lesMedicaments)
+                    if (maDemande.getId() == id)
                     {
-                        int uneQtte = Passerelle.getQtteMedicamentDemande(leMedicament.getId(), id);
-                        Passerelle.ModifierStockMedicament(id,uneQtte);
+                        ArrayList lesMedicaments;
+                        lesMedicaments = Passerelle.listeMedicamentsParDemande(id);
+                        foreach (Medicament leMedicament in lesMedicaments)
+                        {
+                            int uneQtte = Passerelle.getQtteMedicamentDemande(leMedicament.getId(), id);
+                            Passerelle.ModifierStockMedicament(id, uneQtte);
+                        }
+
+                        Passerelle.AccepterDemande(id);
                     }
-                    
-                    Passerelle.AccepterDemande(id);
                 }
-            }
-            listView1.Items.Clear();
-            lesDemandes = Passerelle.getDemandes();
-            foreach (Demande uneDemande in lesDemandes)
-            {
-                string[] arr = new string[3];
-                ListViewItem itm;
-                arr[0] = uneDemande.getId() + "";
-                arr[1] = uneDemande.getNomUtilisateur();
-                arr[2] = uneDemande.getLibelleEtat();
-                itm = new ListViewItem(arr);
-                listView1.Items.Add(itm);
-            }
+                listView1.Items.Clear();
+                lesDemandes = Passerelle.getDemandes();
+                foreach (Demande uneDemande in lesDemandes)
+                {
+                    string[] arr = new string[3];
+                    ListViewItem itm;
+                    arr[0] = uneDemande.getId() + "";
+                    arr[1] = uneDemande.getNomUtilisateur();
+                    arr[2] = uneDemande.getLibelleEtat();
+                    itm = new ListViewItem(arr);
+                    listView1.Items.Add(itm);
+                }
+            }            
 
         }
 
@@ -93,25 +98,38 @@ namespace projetHopital
             ArrayList lesDemandes = new ArrayList();
             lesDemandes = Passerelle.getDemandes();
             int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-            foreach (Demande maDemande in lesDemandes)
+            //IF A SUPPRIMER QUAND HISTORIQUE DEVELOPPE
+            if (Passerelle.verifEtatDemande(id) == 2)
             {
-                if (maDemande.getId() == id)
+                foreach (Demande maDemande in lesDemandes)
                 {
-                    Passerelle.RefuserDemande(id);
+                    if (maDemande.getId() == id)
+                    {
+                        Passerelle.RefuserDemande(id);
+                    }
+                }
+                listView1.Items.Clear();
+                lesDemandes = Passerelle.getDemandes();
+                foreach (Demande uneDemande in lesDemandes)
+                {
+                    string[] arr = new string[3];
+                    ListViewItem itm;
+                    arr[0] = uneDemande.getId() + "";
+                    arr[1] = uneDemande.getNomUtilisateur();
+                    arr[2] = uneDemande.getLibelleEtat();
+                    itm = new ListViewItem(arr);
+                    listView1.Items.Add(itm);
                 }
             }
-            listView1.Items.Clear();
-            lesDemandes = Passerelle.getDemandes();
-            foreach (Demande uneDemande in lesDemandes)
-            {
-                string[] arr = new string[3];
-                ListViewItem itm;
-                arr[0] = uneDemande.getId() + "";
-                arr[1] = uneDemande.getNomUtilisateur();
-                arr[2] = uneDemande.getLibelleEtat();
-                itm = new ListViewItem(arr);
-                listView1.Items.Add(itm);
-            }
+                
+        }
+
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            int idDemande = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            IHMContenuDemande contenuDemande = new IHMContenuDemande(idDemande);
+            this.Hide();
+            contenuDemande.ShowDialog();
         }
     }
 }

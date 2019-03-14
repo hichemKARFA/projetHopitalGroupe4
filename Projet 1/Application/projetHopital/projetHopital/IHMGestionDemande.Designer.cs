@@ -38,14 +38,15 @@
             this.btnAccepter = new System.Windows.Forms.Button();
             this.btnRefuser = new System.Windows.Forms.Button();
             this.btnDetail = new System.Windows.Forms.Button();
+            this.btnHistorique = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Numéro,
-            this.Etat,
-            this.Infirmier});
+            this.Infirmier,
+            this.Etat});
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(211, 91);
             this.listView1.MultiSelect = false;
@@ -63,12 +64,14 @@
             // 
             // Etat
             // 
+            this.Etat.DisplayIndex = 1;
             this.Etat.Text = "Etat";
             this.Etat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Etat.Width = 151;
             // 
             // Infirmier
             // 
+            this.Infirmier.DisplayIndex = 2;
             this.Infirmier.Text = "Infirmier";
             this.Infirmier.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Infirmier.Width = 195;
@@ -145,18 +148,33 @@
             this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDetail.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Location = new System.Drawing.Point(39, 241);
+            this.btnDetail.Location = new System.Drawing.Point(39, 181);
             this.btnDetail.Name = "btnDetail";
             this.btnDetail.Size = new System.Drawing.Size(125, 48);
             this.btnDetail.TabIndex = 20;
             this.btnDetail.Text = "Détails";
             this.btnDetail.UseVisualStyleBackColor = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
+            // btnHistorique
+            // 
+            this.btnHistorique.BackColor = System.Drawing.Color.Gold;
+            this.btnHistorique.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHistorique.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorique.ForeColor = System.Drawing.Color.White;
+            this.btnHistorique.Location = new System.Drawing.Point(24, 286);
+            this.btnHistorique.Name = "btnHistorique";
+            this.btnHistorique.Size = new System.Drawing.Size(155, 48);
+            this.btnHistorique.TabIndex = 21;
+            this.btnHistorique.Text = "Historique";
+            this.btnHistorique.UseVisualStyleBackColor = false;
             // 
             // gestionDemandes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 616);
+            this.Controls.Add(this.btnHistorique);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnRefuser);
             this.Controls.Add(this.btnAccepter);
@@ -184,5 +202,6 @@
         private System.Windows.Forms.Button btnAccepter;
         private System.Windows.Forms.Button btnRefuser;
         private System.Windows.Forms.Button btnDetail;
+        private System.Windows.Forms.Button btnHistorique;
     }
 }

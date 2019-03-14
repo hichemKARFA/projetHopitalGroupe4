@@ -178,3 +178,4 @@ D:\Tom\Documents\PPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\pro
 D:\Tom\Documents\PPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.CoreCompileInputs.cache
 D:\Tom\Documents\PPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
 D:\Tom\Documents\PPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+D:\Tom\Documents\PPE\projetHopitalGroupe4\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMContenuDemande.resources
