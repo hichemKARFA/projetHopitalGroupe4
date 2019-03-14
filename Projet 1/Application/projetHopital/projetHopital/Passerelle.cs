@@ -200,17 +200,35 @@ namespace projetHopital
 
         public static int trouverIdMax(string pnomTable)
         {
-            seConnecter();
-            int id = 0;
-            SqlCommand maCommande;
-            String requete = "Select Max(id) FROM " + pnomTable + ";";
-            maCommande = new SqlCommand(requete, laConnection);
-           
-            if(maCommande.ExecuteScalar()!=null)
+            int id = 1;
+            if (verifTableVideDemandes()==true)
             {
+                seConnecter();
+                SqlCommand maCommande;
+                String requete = "Select Max(id) FROM " + pnomTable + ";";
+                maCommande = new SqlCommand(requete, laConnection);
+
                 id = (int)maCommande.ExecuteScalar();
             }
+            
             return id;
+        }
+
+        public static bool verifTableVideDemandes()
+        {
+            seConnecter();
+            bool test=false;
+            int id=0;
+            SqlCommand maCommande;
+            String requete = "Select count(id) FROM demandes";
+            maCommande = new SqlCommand(requete, laConnection);
+
+            if ((int)maCommande.ExecuteScalar() != 0)
+            {
+                test = true;
+            }
+
+            return test;
         }
 
         public static bool supprimerMedicament(int id)
