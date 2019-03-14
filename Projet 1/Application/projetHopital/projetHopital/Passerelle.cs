@@ -18,7 +18,8 @@ namespace projetHopital
             {
 
                 laConnection = new SqlConnection();
-                laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
+                //laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
+                laConnection.ConnectionString = "Server= localhost; Database= slam2019projetHopitalGroupe4; Integrated Security=True;";
                 laConnection.Open();
                 System.Diagnostics.Debug.WriteLine("instanciation connexion");
 
@@ -313,5 +314,62 @@ namespace projetHopital
             bool test = true;
             return test;
         }
+
+        public static void ModifierStockMedicament(int pId, int pQtte)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update medicaments Set stock = (stock -" + pId + ");";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
+        public static void AccepterDemande(int pId)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update Demandes Set etat = 1 WHERE id="+pId+";";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
+        public static void RefuserDemande(int pId)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Update Demandes Set etat = 3 WHERE id=" + pId + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            maCommande.ExecuteNonQuery();
+            seDeconnecter();
+        }
+        public static int getQtteMedicamentDemande(int pIdMedoc, int pIdDemande)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "Select quantite FROM ContenuDemande WHERE demande =" + pIdDemande + " AND medicament =" + pIdMedoc + ";";
+            maCommande = new SqlCommand(requete, laConnection);
+            int Qtte = (int)maCommande.ExecuteScalar();
+            seDeconnecter();
+            return Qtte;
+        }
+
+        public static ArrayList listeMedicamentsParDemande(int pId) // donne la liste des medicaments 
+        {
+            ArrayList lesMedicaments = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "select medicament from ContenuDemande WHERE demande="+pId+";";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                int id = (int)unJeuResultat["medicament"];
+                Medicament unMedicament = new Medicament(id, null, 0, 0);
+                lesMedicaments.Add(unMedicament);
+            }
+            seDeconnecter();
+            return lesMedicaments;
+        }
+
     }
 }

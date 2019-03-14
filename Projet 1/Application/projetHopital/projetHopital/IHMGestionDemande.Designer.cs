@@ -47,11 +47,10 @@
             this.Etat,
             this.Infirmier});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(281, 112);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
+            this.listView1.Location = new System.Drawing.Point(211, 91);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(611, 440);
+            this.listView1.Size = new System.Drawing.Size(459, 358);
             this.listView1.TabIndex = 14;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -78,10 +77,9 @@
             // 
             this.lblCommande.AutoSize = true;
             this.lblCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommande.Location = new System.Drawing.Point(360, 30);
-            this.lblCommande.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCommande.Location = new System.Drawing.Point(270, 24);
             this.lblCommande.Name = "lblCommande";
-            this.lblCommande.Size = new System.Drawing.Size(432, 54);
+            this.lblCommande.Size = new System.Drawing.Size(348, 42);
             this.lblCommande.TabIndex = 15;
             this.lblCommande.Text = "Gestion demandes";
             // 
@@ -91,10 +89,9 @@
             this.btnRetour.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRetour.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRetour.ForeColor = System.Drawing.Color.White;
-            this.btnRetour.Location = new System.Drawing.Point(715, 684);
-            this.btnRetour.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRetour.Location = new System.Drawing.Point(536, 556);
             this.btnRetour.Name = "btnRetour";
-            this.btnRetour.Size = new System.Drawing.Size(191, 59);
+            this.btnRetour.Size = new System.Drawing.Size(143, 48);
             this.btnRetour.TabIndex = 16;
             this.btnRetour.Text = "Retour";
             this.btnRetour.UseVisualStyleBackColor = false;
@@ -106,10 +103,9 @@
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnQuitter.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuitter.ForeColor = System.Drawing.Color.White;
-            this.btnQuitter.Location = new System.Drawing.Point(989, 684);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuitter.Location = new System.Drawing.Point(742, 556);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(191, 59);
+            this.btnQuitter.Size = new System.Drawing.Size(143, 48);
             this.btnQuitter.TabIndex = 17;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = false;
@@ -121,13 +117,13 @@
             this.btnAccepter.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAccepter.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccepter.ForeColor = System.Drawing.Color.White;
-            this.btnAccepter.Location = new System.Drawing.Point(971, 223);
-            this.btnAccepter.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAccepter.Location = new System.Drawing.Point(728, 181);
             this.btnAccepter.Name = "btnAccepter";
-            this.btnAccepter.Size = new System.Drawing.Size(188, 59);
+            this.btnAccepter.Size = new System.Drawing.Size(141, 48);
             this.btnAccepter.TabIndex = 18;
             this.btnAccepter.Text = "Accepter";
             this.btnAccepter.UseVisualStyleBackColor = false;
+            this.btnAccepter.Click += new System.EventHandler(this.btnAccepter_Click);
             // 
             // btnRefuser
             // 
@@ -135,13 +131,13 @@
             this.btnRefuser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefuser.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefuser.ForeColor = System.Drawing.Color.White;
-            this.btnRefuser.Location = new System.Drawing.Point(971, 352);
-            this.btnRefuser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefuser.Location = new System.Drawing.Point(728, 286);
             this.btnRefuser.Name = "btnRefuser";
-            this.btnRefuser.Size = new System.Drawing.Size(188, 59);
+            this.btnRefuser.Size = new System.Drawing.Size(141, 48);
             this.btnRefuser.TabIndex = 19;
             this.btnRefuser.Text = "Refuser";
             this.btnRefuser.UseVisualStyleBackColor = false;
+            this.btnRefuser.Click += new System.EventHandler(this.btnRefuser_Click);
             // 
             // btnDetail
             // 
@@ -149,19 +145,18 @@
             this.btnDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDetail.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetail.ForeColor = System.Drawing.Color.White;
-            this.btnDetail.Location = new System.Drawing.Point(52, 297);
-            this.btnDetail.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDetail.Location = new System.Drawing.Point(39, 241);
             this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(167, 59);
+            this.btnDetail.Size = new System.Drawing.Size(125, 48);
             this.btnDetail.TabIndex = 20;
             this.btnDetail.Text = "Détails";
             this.btnDetail.UseVisualStyleBackColor = false;
             // 
             // gestionDemandes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 758);
+            this.ClientSize = new System.Drawing.Size(923, 616);
             this.Controls.Add(this.btnDetail);
             this.Controls.Add(this.btnRefuser);
             this.Controls.Add(this.btnAccepter);
@@ -169,7 +164,6 @@
             this.Controls.Add(this.btnRetour);
             this.Controls.Add(this.lblCommande);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "gestionDemandes";
             this.Text = "gestionDemandes";
             this.Load += new System.EventHandler(this.gestionDemandes_Load);

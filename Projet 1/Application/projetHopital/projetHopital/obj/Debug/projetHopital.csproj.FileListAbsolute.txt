@@ -144,3 +144,20 @@ C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMConnexion.resources
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMModifierStock.resources
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csprojResolveAssemblyReference.cache
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAccueil.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAjouterMedicament.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMCommande.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMDemande.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMConnexion.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMModifierStock.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.CoreCompileInputs.cache
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb

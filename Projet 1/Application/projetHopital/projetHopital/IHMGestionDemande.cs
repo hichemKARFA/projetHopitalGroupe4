@@ -51,5 +51,67 @@ namespace projetHopital
         {
 
         }
+
+        private void btnAccepter_Click(object sender, EventArgs e)
+        {
+            ArrayList lesDemandes = new ArrayList();
+            lesDemandes = Passerelle.getDemandes();
+            int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            int idMedicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            foreach (Demande maDemande in lesDemandes)
+            {
+                if(maDemande.getId() == id)
+                {
+                    ArrayList lesMedicaments;
+                    lesMedicaments = Passerelle.listeMedicamentsParDemande(id);
+                    foreach(Medicament leMedicament in lesMedicaments)
+                    {
+                        int uneQtte = Passerelle.getQtteMedicamentDemande(leMedicament.getId(), id);
+                        Passerelle.ModifierStockMedicament(id,uneQtte);
+                    }
+                    
+                    Passerelle.AccepterDemande(id);
+                }
+            }
+            listView1.Items.Clear();
+            lesDemandes = Passerelle.getDemandes();
+            foreach (Demande uneDemande in lesDemandes)
+            {
+                string[] arr = new string[3];
+                ListViewItem itm;
+                arr[0] = uneDemande.getId() + "";
+                arr[1] = uneDemande.getNomUtilisateur();
+                arr[2] = uneDemande.getLibelleEtat();
+                itm = new ListViewItem(arr);
+                listView1.Items.Add(itm);
+            }
+
+        }
+
+        private void btnRefuser_Click(object sender, EventArgs e)
+        {
+            ArrayList lesDemandes = new ArrayList();
+            lesDemandes = Passerelle.getDemandes();
+            int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            foreach (Demande maDemande in lesDemandes)
+            {
+                if (maDemande.getId() == id)
+                {
+                    Passerelle.RefuserDemande(id);
+                }
+            }
+            listView1.Items.Clear();
+            lesDemandes = Passerelle.getDemandes();
+            foreach (Demande uneDemande in lesDemandes)
+            {
+                string[] arr = new string[3];
+                ListViewItem itm;
+                arr[0] = uneDemande.getId() + "";
+                arr[1] = uneDemande.getNomUtilisateur();
+                arr[2] = uneDemande.getLibelleEtat();
+                itm = new ListViewItem(arr);
+                listView1.Items.Add(itm);
+            }
+        }
     }
 }
