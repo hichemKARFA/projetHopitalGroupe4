@@ -69,4 +69,56 @@ class PatientController extends AbstractController
 		'form'=>$form->createView(),
 		));
 	}
+
+	/**
+	* @Route("supprimerPatient/{id}", name="supprimerPatient")
+	*/
+	public function supprimerPatient($id)
+	{
+		$repository=$this->getDoctrine()->getRepository(Patient::class);
+		$patient=$repository->find($id);
+		$em=$this->getDoctrine()->getManager();
+		$em->remove($patient);
+		$em->flush();
+		return $this->render('patient/supprimerPatient.html.twig',[
+		'patient'=>$patient,
+		]);
+	}
+	/**
+	* @Route("modifierPatient/{id}", name="modifierPatient")
+	*/
+	public function modifierPatient($id, Request $request)
+	{
+		$em=$this->getDoctrine()->getManager();
+		$repository=$this->getDoctrine()->getRepository(Patient::class);
+		$patient=$repository->find($id);
+		$em=$this->getDoctrine()->getManager();
+		
+		$form = $this->createFormBuilder($patient)
+				->add('nom', TextType::class, array('label'=>'Nom du patient : '))
+				->add('prenom', TextType::class, array('label'=>'Prénom : '))
+				->add('age', IntegerType::class, array('label'=>'Age : '))
+				->add('adresse', TextType::class, array('label'=>'Adresse : '))
+				->add('ville', TextType::class, array('label'=>'Ville : '))
+				->add('cp', TextType::class, array('label'=>'Code Postal : '))
+				->add('telephone', TextType::class, array('label'=>'Téléphone : '))
+				->add('mail', TextType::class, array('label'=>'Adresse mail : '))
+
+				->add('save', SubmitType::class, array('label'=>'ajouter un Patient'))
+				->getForm();
+		
+		
+		$form->handleRequest($request);
+		if($form->isSubmitted()&&$form->isValid())
+		{
+			$patient = $form->getData();
+			$em=$this->getDoctrine()->getManager();
+			$em->persist($patient);
+			$em->flush();
+			return $this->redirectToRoute('traitements');
+		}
+		return $this->render('patient/modifierPatient.html.twig',array(
+		'form'=>$form->createView(),
+		));
+	}
 }
