@@ -118,15 +118,8 @@ C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csprojResolveAssemblyReference.cache
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Accueil.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.AjouterMedicament.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Commande.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Demande.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Connexion.resources
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.ModifierStock.resources
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
-C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
 C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
@@ -144,3 +137,10 @@ F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\D
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Stock.resources
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.Cache
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAccueil.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAjouterMedicament.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMCommande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMDemande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMConnexion.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMModifierStock.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources

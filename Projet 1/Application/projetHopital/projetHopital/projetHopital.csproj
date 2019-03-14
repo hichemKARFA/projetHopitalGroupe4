@@ -44,78 +44,79 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accueil.cs">
+    <Compile Include="Demande.cs" />
+    <Compile Include="IHMAccueil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Accueil.Designer.cs">
-      <DependentUpon>Accueil.cs</DependentUpon>
+    <Compile Include="IHMAccueil.Designer.cs">
+      <DependentUpon>IHMAccueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjouterMedicament.cs">
+    <Compile Include="IHMAjouterMedicament.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AjouterMedicament.Designer.cs">
-      <DependentUpon>AjouterMedicament.cs</DependentUpon>
+    <Compile Include="IHMAjouterMedicament.Designer.cs">
+      <DependentUpon>IHMAjouterMedicament.cs</DependentUpon>
     </Compile>
-    <Compile Include="Commande.cs">
+    <Compile Include="IHMCommande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Commande.Designer.cs">
-      <DependentUpon>Commande.cs</DependentUpon>
+    <Compile Include="IHMCommande.Designer.cs">
+      <DependentUpon>IHMCommande.cs</DependentUpon>
     </Compile>
-    <Compile Include="Demande.cs">
+    <Compile Include="IHMDemande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Demande.Designer.cs">
-      <DependentUpon>Demande.cs</DependentUpon>
+    <Compile Include="IHMDemande.Designer.cs">
+      <DependentUpon>IHMDemande.cs</DependentUpon>
     </Compile>
-    <Compile Include="Connexion.cs">
+    <Compile Include="IHMConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Connexion.Designer.cs">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <Compile Include="IHMConnexion.Designer.cs">
+      <DependentUpon>IHMConnexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="gestionDemandes.cs">
+    <Compile Include="IHMGestionDemande.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gestionDemandes.Designer.cs">
-      <DependentUpon>gestionDemandes.cs</DependentUpon>
+    <Compile Include="IHMGestionDemande.Designer.cs">
+      <DependentUpon>IHMGestionDemande.cs</DependentUpon>
     </Compile>
     <Compile Include="Medicament.cs" />
-    <Compile Include="ModifierStock.cs">
+    <Compile Include="IHMModifierStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifierStock.Designer.cs">
-      <DependentUpon>ModifierStock.cs</DependentUpon>
+    <Compile Include="IHMModifierStock.Designer.cs">
+      <DependentUpon>IHMModifierStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock.cs">
+    <Compile Include="IHMStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock.Designer.cs">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <Compile Include="IHMStock.Designer.cs">
+      <DependentUpon>IHMStock.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Accueil.resx">
-      <DependentUpon>Accueil.cs</DependentUpon>
+    <EmbeddedResource Include="IHMAccueil.resx">
+      <DependentUpon>IHMAccueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjouterMedicament.resx">
-      <DependentUpon>AjouterMedicament.cs</DependentUpon>
+    <EmbeddedResource Include="IHMAjouterMedicament.resx">
+      <DependentUpon>IHMAjouterMedicament.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Commande.resx">
-      <DependentUpon>Commande.cs</DependentUpon>
+    <EmbeddedResource Include="IHMCommande.resx">
+      <DependentUpon>IHMCommande.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Demande.resx">
-      <DependentUpon>Demande.cs</DependentUpon>
+    <EmbeddedResource Include="IHMDemande.resx">
+      <DependentUpon>IHMDemande.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Connexion.resx">
-      <DependentUpon>Connexion.cs</DependentUpon>
+    <EmbeddedResource Include="IHMConnexion.resx">
+      <DependentUpon>IHMConnexion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gestionDemandes.resx">
-      <DependentUpon>gestionDemandes.cs</DependentUpon>
+    <EmbeddedResource Include="IHMGestionDemande.resx">
+      <DependentUpon>IHMGestionDemande.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifierStock.resx">
-      <DependentUpon>ModifierStock.cs</DependentUpon>
+    <EmbeddedResource Include="IHMModifierStock.resx">
+      <DependentUpon>IHMModifierStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,8 +128,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Stock.resx">
-      <DependentUpon>Stock.cs</DependentUpon>
+    <EmbeddedResource Include="IHMStock.resx">
+      <DependentUpon>IHMStock.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

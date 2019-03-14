@@ -111,7 +111,7 @@ namespace projetHopital
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "INSERT INTO Demandes VALUES (" + pId +"," + pUtilisateur +",1);";
+            String requete = "INSERT INTO Demandes VALUES (" + pId +"," + pUtilisateur +",2);";
             maCommande = new SqlCommand(requete, laConnection);
             maCommande.ExecuteNonQuery();
             seDeconnecter();
@@ -126,25 +126,25 @@ namespace projetHopital
             seDeconnecter();
         }
 
-        /*public static ArrayList getDemandes() // donne la liste des medicaments        //// A VOIR EN GROUPE ////
+        public static ArrayList getDemandes() // donne la liste des demandes pour un pharmacien
         {
             ArrayList lesDemandes = new ArrayList();
             seConnecter();
             SqlCommand maCommande;
-            String requete = "select Demandes.id, Utilisateurs.nom, Etat.libelle from Demandes JOIN Utilisateurs on Utilisateurs.id = Demandes.utilisateur JOIN Etat ON Demandes.etat = Etat.id";
+            String requete = "select Demandes.id as idDemande, Utilisateurs.nom, Etat.libelle from Demandes JOIN Utilisateurs on Utilisateurs.id = Demandes.utilisateur JOIN Etat ON Demandes.etat = Etat.id";
             maCommande = new SqlCommand(requete, laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read())
             {
-                int id = (int)unJeuResultat["Demandes.id"];
-                string nom = (string)unJeuResultat["Utilisateurs.nom"];
-                string etat = (string)unJeuResultat["Etat.libelle"];
+                int id = (int)unJeuResultat["idDemande"];
+                string nom = (string)unJeuResultat["nom"];
+                string etat = (string)unJeuResultat["libelle"];
                 Demande uneDemande = new Demande(id,nom,etat);
-                lesMedicaments.Add(unMedicament);
+                lesDemandes.Add(uneDemande);
             }
             seDeconnecter();
-            return lesMedicaments;
-        }*/
+            return lesDemandes;
+        }
 
         public static void faireCommande(int id,int quantite)
         {
