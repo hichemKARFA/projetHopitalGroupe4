@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContenuDemande.cs" />
     <Compile Include="Demande.cs" />
     <Compile Include="IHMAccueil.cs">
       <SubType>Form</SubType>
@@ -63,6 +64,12 @@
     <Compile Include="IHMCommande.Designer.cs">
       <DependentUpon>IHMCommande.cs</DependentUpon>
     </Compile>
+    <Compile Include="IHMContenuDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMContenuDemande.Designer.cs">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
+    </Compile>
     <Compile Include="IHMDemande.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +87,12 @@
     </Compile>
     <Compile Include="IHMGestionDemande.Designer.cs">
       <DependentUpon>IHMGestionDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMHistoriqueDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMHistoriqueDemande.Designer.cs">
+      <DependentUpon>IHMHistoriqueDemande.cs</DependentUpon>
     </Compile>
     <Compile Include="Medicament.cs" />
     <Compile Include="IHMModifierStock.cs">
@@ -106,6 +119,9 @@
     <EmbeddedResource Include="IHMCommande.resx">
       <DependentUpon>IHMCommande.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IHMContenuDemande.resx">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IHMDemande.resx">
       <DependentUpon>IHMDemande.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IHMGestionDemande.resx">
       <DependentUpon>IHMGestionDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMHistoriqueDemande.resx">
+      <DependentUpon>IHMHistoriqueDemande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IHMModifierStock.resx">
       <DependentUpon>IHMModifierStock.cs</DependentUpon>
