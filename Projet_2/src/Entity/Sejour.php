@@ -26,6 +26,16 @@ class Sejour
      */
     private $dateSortie;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Patient", inversedBy="sejours")
+     */
+    private $patient;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Lit", inversedBy="sejours")
+     */
+    private $lit;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +61,30 @@ class Sejour
     public function setDateSortie(?\DateTimeInterface $dateSortie): self
     {
         $this->dateSortie = $dateSortie;
+
+        return $this;
+    }
+
+    public function getPatient(): ?Patient
+    {
+        return $this->patient;
+    }
+
+    public function setPatient(?Patient $patient): self
+    {
+        $this->patient = $patient;
+
+        return $this;
+    }
+
+    public function getLit(): ?Lit
+    {
+        return $this->lit;
+    }
+
+    public function setLit(?Lit $lit): self
+    {
+        $this->lit = $lit;
 
         return $this;
     }

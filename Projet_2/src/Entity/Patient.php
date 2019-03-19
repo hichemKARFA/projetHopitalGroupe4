@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,6 +57,16 @@ class Patient
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $mail;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Sejour", mappedBy="patient")
+     */
+    private $sejours;
+
+    public function __construct()
+    {
+        $this->sejours = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -153,6 +165,37 @@ class Patient
     public function setMail(?string $mail): self
     {
         $this->mail = $mail;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Sejour[]
+     */
+    public function getSejours(): Collection
+    {
+        return $this->sejours;
+    }
+
+    public function addSejour(Sejour $sejour): self
+    {
+        if (!$this->sejours->contains($sejour)) {
+            $this->sejours[] = $sejour;
+            $sejour->setPatient($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSejour(Sejour $sejour): self
+    {
+        if ($this->sejours->contains($sejour)) {
+            $this->sejours->removeElement($sejour);
+            // set the owning side to null (unless already changed)
+            if ($sejour->getPatient() === $this) {
+                $sejour->setPatient(null);
+            }
+        }
 
         return $this;
     }
