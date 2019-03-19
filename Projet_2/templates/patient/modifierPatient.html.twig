@@ -9,14 +9,8 @@
 </style>
 
 <div class="example-wrapper">
-   {%for patient in patients %}
-	<li>
-		ID : {{patient.id}}<br/>
-		<a href="{{path('modifierPatient',{id:patient.id})}}">modifier</a>
-		<a href="{{path('supprimerPatient',{id:patient.id})}}">supprimer</a>
-	</li>
-	{%else%}
-	Pas d'adhérent trouvé
-	{%endfor%}
+    {{form_start(form)}}
+	{{form_widget(form)}}
+	{{form_end(form)}}
 </div>
 {% endblock %}

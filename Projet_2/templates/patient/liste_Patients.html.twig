@@ -12,13 +12,13 @@
 	<h2> Liste des patients </h2>
     {%for patient in patients %}
 	<li>
-		ID : {{patient.id}} <a href="{{path('supprimerPatient',{id:patient.id})}}">supprimer</a><br/>
+		ID : {{patient.id}}   <a style="color: red" href="{{path('supprimerPatient',{id:patient.id})}}">supprimer</a>   <a style="color: #3BAAFF" href="{{path('modifierPatient',{id:patient.id})}}">modifier</a><br/>
 		Nom : {{patient.nom}}<br/>
 		Prénom : {{patient.prenom}}<br/>
 		Age : {{patient.age}}<br/>
 		Adresse : {{patient.adresse}}, {{patient.cp}} à {{patient.ville}}</br>
 		Téléphone : {{patient.telephone}}<br/>
-		Adresse mail :{{patient.mail}}<br/>
+		Adresse mail : {{patient.mail}}<br/>
 		
 	</li>
 	{%else%}
