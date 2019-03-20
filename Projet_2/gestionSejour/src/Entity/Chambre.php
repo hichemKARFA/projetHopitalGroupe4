@@ -24,9 +24,9 @@ class Chambre
     private $lits;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Lit", inversedBy="chambres")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Service", inversedBy="chambres")
      */
-    private $lit;
+    private $service;
 
     public function __construct()
     {
@@ -69,14 +69,14 @@ class Chambre
         return $this;
     }
 
-    public function getLit(): ?Lit
+    public function getService(): ?Service
     {
-        return $this->lit;
+        return $this->service;
     }
 
-    public function setLit(?Lit $lit): self
+    public function setService(?Service $service): self
     {
-        $this->lit = $lit;
+        $this->service = $service;
 
         return $this;
     }

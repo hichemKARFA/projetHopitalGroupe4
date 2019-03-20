@@ -28,15 +28,9 @@ class Lit
      */
     private $chambre;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Chambre", mappedBy="lit")
-     */
-    private $chambres;
-
     public function __construct()
     {
         $this->sejours = new ArrayCollection();
-        $this->chambres = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -83,37 +77,6 @@ class Lit
     public function setChambre(?Chambre $chambre): self
     {
         $this->chambre = $chambre;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Chambre[]
-     */
-    public function getChambres(): Collection
-    {
-        return $this->chambres;
-    }
-
-    public function addChambre(Chambre $chambre): self
-    {
-        if (!$this->chambres->contains($chambre)) {
-            $this->chambres[] = $chambre;
-            $chambre->setLit($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChambre(Chambre $chambre): self
-    {
-        if ($this->chambres->contains($chambre)) {
-            $this->chambres->removeElement($chambre);
-            // set the owning side to null (unless already changed)
-            if ($chambre->getLit() === $this) {
-                $chambre->setLit(null);
-            }
-        }
 
         return $this;
     }

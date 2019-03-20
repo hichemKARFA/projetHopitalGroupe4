@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190319130103 extends AbstractMigration
+final class Version20190320073734 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,9 +22,9 @@ final class Version20190319130103 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE chambre ADD lit_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE chambre ADD CONSTRAINT FK_C509E4FF278B5057 FOREIGN KEY (lit_id) REFERENCES lit (id)');
-        $this->addSql('CREATE INDEX IDX_C509E4FF278B5057 ON chambre (lit_id)');
+        $this->addSql('ALTER TABLE chambre ADD service_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE chambre ADD CONSTRAINT FK_C509E4FFED5CA9E6 FOREIGN KEY (service_id) REFERENCES service (id)');
+        $this->addSql('CREATE INDEX IDX_C509E4FFED5CA9E6 ON chambre (service_id)');
         $this->addSql('ALTER TABLE lit ADD chambre_id INT DEFAULT NULL');
         $this->addSql('ALTER TABLE lit ADD CONSTRAINT FK_5DDB8E9D9B177F54 FOREIGN KEY (chambre_id) REFERENCES chambre (id)');
         $this->addSql('CREATE INDEX IDX_5DDB8E9D9B177F54 ON lit (chambre_id)');
@@ -40,9 +40,9 @@ final class Version20190319130103 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE chambre DROP FOREIGN KEY FK_C509E4FF278B5057');
-        $this->addSql('DROP INDEX IDX_C509E4FF278B5057 ON chambre');
-        $this->addSql('ALTER TABLE chambre DROP lit_id');
+        $this->addSql('ALTER TABLE chambre DROP FOREIGN KEY FK_C509E4FFED5CA9E6');
+        $this->addSql('DROP INDEX IDX_C509E4FFED5CA9E6 ON chambre');
+        $this->addSql('ALTER TABLE chambre DROP service_id');
         $this->addSql('ALTER TABLE lit DROP FOREIGN KEY FK_5DDB8E9D9B177F54');
         $this->addSql('DROP INDEX IDX_5DDB8E9D9B177F54 ON lit');
         $this->addSql('ALTER TABLE lit DROP chambre_id');
