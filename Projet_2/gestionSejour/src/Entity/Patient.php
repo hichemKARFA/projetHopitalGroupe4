@@ -77,6 +77,11 @@ class Patient
     {
         return $this->nom;
     }
+	
+	 public function getLibelle(): ?string
+    {
+        return $this->id.' - '.$this->nom.' - '.$this->prenom;
+    }
 
     public function setNom(?string $nom): self
     {

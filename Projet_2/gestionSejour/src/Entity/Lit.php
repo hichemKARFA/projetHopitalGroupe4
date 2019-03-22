@@ -73,6 +73,11 @@ class Lit
     {
         return $this->chambre;
     }
+	
+	 public function getlitchambre(): ?string
+    {
+        return $this->chambre->getService()->getLibelle().' - Chambre '.$this->chambre->getId().' - Lit '.$this->id;
+    }
 
     public function setChambre(?Chambre $chambre): self
     {
