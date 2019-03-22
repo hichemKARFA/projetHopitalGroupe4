@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <style>
+        @media max-width:700px)
+        {
+            #menu{
+            display: flex;
+            flex-direction: column;
+            color : blue;
+            list-style-type: none; 
+            justify-content : space-around;
+            font-size: 1.3em;
+            }
+        }
+@media min-width:700px)
+        {
+            .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+            #menu{
+            display: flex;
+            color : blue;
+            list-style-type: none; 
+            justify-content : space-around;
+            font-size: 1.3em;
+            }
+        }
+        header{
+            border: solid 1px #1DA593;
+            background-color: #BDFFF6;
+        }
+        #menu{
+            display: flex;
+            color : blue;
+            list-style-type: none; 
+            justify-content : space-around;
+            font-size: 1.3em;
+        }
+        a:visited{
+            color: #46C8B8;
+        }
+        a:hover{
+            color : #1DA593;
+        }
+        a{
+            color: #46C8B8;
+        }
+        html{
+            background-color: #E8FFF7;
+        }
+    </style>
+    <body>
+        <header>
+            <ul id="menu">
+                <li><a href="{{path('listepatients')}}">Gestion des séjours</a></li>
+                <li><a href="{{path('ajoutSejour')}}">Ajouter un séjour</a></li>
+                <li><a href="{{path('listepatients')}}">Mettre fin à un séjour</a></li>
+                <li><a href="{{path('listepatients')}}">Gestion des patients</a></li>
+                <li><a href="{{path('ajouterPatient')}}">Ajouter un patient</a></li>
+            </ul>
+        </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

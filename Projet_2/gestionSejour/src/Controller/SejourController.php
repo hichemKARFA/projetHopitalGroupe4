@@ -11,13 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 class SejourController extends AbstractController
 {
     /**
-     * @Route("/sejour", name="sejour")
+     * @Route("index", name="index")
      */
     public function index()
     {
-        return $this->render('sejour/index.html.twig', [
-            'controller_name' => 'SejourController',
-        ]);
+        return $this->render('index.html.twig');
     }
 	
 	 /**
@@ -34,7 +32,7 @@ class SejourController extends AbstractController
 	$em=$this->getDoctrine()->getManager();
 	$em->persist($sejour);
 	$em->flush();
-	return $this->RedirectToRoute('sejour');
+	return $this->RedirectToRoute('index');
 	}
 	return $this->render('Sejour/formulaireSejour.html.twig', array(
 			'form'=>$form->CreateView(),
