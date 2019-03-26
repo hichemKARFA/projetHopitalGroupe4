@@ -131,7 +131,7 @@ class PatientController extends AbstractController
 			$em->flush();
 			return $this->redirectToRoute('listepatients');
 		}
-		return $this->render('Patient/ajouterPatient.html.twig',array(
+		return $this->render('patient/ajouterPatient.html.twig',array(
 		'form'=>$form->createView(),
 		));
 	}

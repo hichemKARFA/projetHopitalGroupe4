@@ -34,7 +34,7 @@ class SejourController extends AbstractController
 	$em->flush();
 	return $this->RedirectToRoute('index');
 	}
-	return $this->render('Sejour/formulaireSejour.html.twig', array(
+	return $this->render('sejour/formulaireSejour.html.twig', array(
 			'form'=>$form->CreateView(),
 			));  
     }
