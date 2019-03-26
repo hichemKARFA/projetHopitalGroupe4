@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use App\Entity\Patient;
+use App\Entity\Sejour;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -14,7 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 class PatientController extends AbstractController
 {
     /**
-     * @Route("index", name="index")
+     * @Route("/index", name="index")
      */
     public function index()
     {
@@ -24,13 +25,25 @@ class PatientController extends AbstractController
      /**
      * @Route("/listepatients", name="listepatients")
      */
-	public function getPatients()
+	public function afficherPatients()
 	{
 		$repository=$this->getDoctrine()->getRepository(Patient::class);
 		$lesPatients=$repository->findAll();
 		return $this->render('patient/liste_Patients.html.twig',[
 		'patients'=>$lesPatients,
 		]);
+		
+	}
+
+	 /**
+     * @Route("/listeSejours", name="listeSejours")
+     */
+	public function AfficherSejoursPatient($id)
+	{
+		$repository=$this->getDoctrine()->getRepository(Patient::class);
+		$patient=$repository->find($id);
+
+		return $this->render('patient/SejoursPatient.html.twig');
 		
 	}
 
@@ -116,7 +129,7 @@ class PatientController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($Patient);
 			$em->flush();
-			return $this->redirectToRoute('index');
+			return $this->redirectToRoute('listepatients');
 		}
 		return $this->render('Patient/ajouterPatient.html.twig',array(
 		'form'=>$form->createView(),
