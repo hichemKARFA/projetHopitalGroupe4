@@ -2,7 +2,7 @@
 
 function getPDO()
 {
-     $unObjPDO=new PDO('mysql:host=localhost;dbname=ppe_test','root','');
+     $unObjPDO=new PDO('mysql:host=localhost;dbname=gestionSejour','root','');
      return $unObjPDO;
 }
 
@@ -14,31 +14,38 @@ function getPatients()
     return $lesLignesResultatDeLaRequete;
 }
 
-function creerSejour($dateArrivee,$idPatient,$idLit)
+function getPatient($idPatient)
 {
-    $idSejour= attribuerIdMaxSejour();
-    $monObjPdoStatement=getPDO()->prepare("Insert into sejour values (:idSejour,:dateArrivee ,null,:idPatient,:idLit)");
-    $monObjPdoStatement->bindValue(':idSejour', $idSejour);
-    $monObjPdoStatement->bindValue(':dateArrivee', $dateArrivee);
+    $monObjPdoStatement=getPDO()->prepare("Select * From patient Where id=:idPatient");
     $monObjPdoStatement->bindValue(':idPatient', $idPatient);
-    $monObjPdoStatement->bindValue(':idLit', $idLit);
+    $okExecution=$monObjPdoStatement->execute();
+    $lesLignesResultatDeLaRequete=$monObjPdoStatement->fetch(PDO::FETCH_ASSOC);
+    return $lesLignesResultatDeLaRequete;
+}
+
+function setEtatEntree($idEtat, $idSejour)
+{
+    $monObjPdoStatement=getPDO()->prepare("Update sejour Set etatEntree=:idEtat Where id=:idSejour");
+    $monObjPdoStatement->bindValue(':idEtat', $idEtat);
+    $monObjPdoStatement->bindValue(':idSejour', $idSejour);
     $okExecution=$monObjPdoStatement->execute();
 }
 
-function attribuerIdMaxSejour()
+function setEtatSortie($idEtat, $idSejour)
 {
-   $id=1;
-   $monObjPdoStatement=getPDO()->prepare("Select Count(id) From sejour");
-   $okExecution=$monObjPdoStatement->execute();
-   $lesLignesResultatDeLaRequete=$monObjPdoStatement->fetch(PDO::FETCH_ASSOC);
-   if($lesLignesResultatDeLaRequete['Count(id)']!=0)
-   {
-       $monObjPdoStatement=getPDO()->prepare("Select Max(id) From sejour");
-       $okExecution=$monObjPdoStatement->execute();
-       $lesLignesResultatDeLaRequete=$monObjPdoStatement->fetch(PDO::FETCH_ASSOC);
-       $id=$lesLignesResultatDeLaRequete['Max(id)']+1;
-   }
-   return $id;
+    $monObjPdoStatement=getPDO()->prepare("Update sejour Set etatSortie=:idEtat Where id=:idSejour");
+    $monObjPdoStatement->bindValue(':idEtat', $idEtat);
+    $monObjPdoStatement->bindValue(':idSejour', $idSejour);
+    $okExecution=$monObjPdoStatement->execute();
 }
+
+function setCommentaire($commentaire, $idSejour)
+{
+    $monObjPdoStatement=getPDO()->prepare("Update sejour Set commentaire=:commentaire Where id=:idSejour");
+    $monObjPdoStatement->bindValue(':commentaire', $commentaire);
+    $monObjPdoStatement->bindValue(':idSejour', $idSejour);
+    $okExecution=$monObjPdoStatement->execute();
+}
+
 
 ?>
