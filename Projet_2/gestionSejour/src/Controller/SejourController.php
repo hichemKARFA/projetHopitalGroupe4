@@ -38,4 +38,18 @@ class SejourController extends AbstractController
 			'form'=>$form->CreateView(),
 			));  
     }
+	
+	
+	  /**
+     * @Route("/listesejours", name="sejourListeSejours")
+     */
+		public function afficherSejour()
+	{
+		$repository=$this->getDoctrine()->getRepository(Sejour::class);
+		$lesSejours=$repository->findAll();
+		return $this->render('sejour/liste_Sejour.html.twig',[
+		'lesSejours'=>$lesSejours,
+		]);
+		
+	}
 }

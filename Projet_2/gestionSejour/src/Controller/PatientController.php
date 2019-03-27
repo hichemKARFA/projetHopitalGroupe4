@@ -36,7 +36,7 @@ class PatientController extends AbstractController
 	}
 
 	 /**
-     * @Route("/listeSejours", name="listeSejours")
+     * @Route("/patient/listeSejours", name="patientListeSejours")
      */
 	public function AfficherSejoursPatient($id)
 	{
