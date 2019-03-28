@@ -52,8 +52,6 @@ class SejourController extends AbstractController
 		]);
 		
 	}
-<<<<<<< HEAD
-=======
 	
 	/**
      * @Route("/finSejour", name="finSejour")
@@ -67,5 +65,4 @@ class SejourController extends AbstractController
 		'lesSejours'=>$lesSejours,
 		]);
     }
->>>>>>> c7da927cab19448e2296908911c0451766d61642
 }
