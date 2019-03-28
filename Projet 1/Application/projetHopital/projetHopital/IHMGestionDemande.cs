@@ -70,7 +70,7 @@ namespace projetHopital
                     foreach (Medicament leMedicament in lesMedicaments)
                     {
                         int uneQtte = Passerelle.getQtteMedicamentDemande(leMedicament.getId(), id);
-                        Passerelle.ModifierStockMedicament(id, uneQtte);
+                        Passerelle.ModifierStockMedicament(leMedicament.getId(), uneQtte);
                     }
 
                     Passerelle.AccepterDemande(id);

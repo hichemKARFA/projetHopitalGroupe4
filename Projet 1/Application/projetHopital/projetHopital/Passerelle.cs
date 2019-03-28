@@ -356,7 +356,7 @@ namespace projetHopital
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "Update medicaments Set stock = (stock -" + pId + ");";
+            String requete = "Update medicaments Set stock = (stock -" + pQtte + ") WHERE id="+pId+";";
             maCommande = new SqlCommand(requete, laConnection);
             maCommande.ExecuteNonQuery();
             seDeconnecter();

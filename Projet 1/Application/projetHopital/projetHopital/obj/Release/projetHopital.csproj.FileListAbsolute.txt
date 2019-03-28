@@ -16,3 +16,21 @@ F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\R
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Release\projetHopital.csproj.GenerateResource.Cache
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Release\projetHopital.exe
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Release\projetHopital.pdb
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Release\projetHopital.exe.config
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.exe
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.pdb
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Release\projetHopital.exe
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\bin\Release\projetHopital.pdb
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.csprojResolveAssemblyReference.cache
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMAccueil.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMAjouterMedicament.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMCommande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMContenuDemande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMDemande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMConnexion.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.gestionDemandes.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMHistoriqueDemande.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMModifierStock.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.Properties.Resources.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.IHMStock.resources
+C:\Users\sio2018\Documents\ProjetPPE\Application\projetHopital\projetHopital\obj\Release\projetHopital.csproj.GenerateResource.Cache
