@@ -52,4 +52,20 @@ class SejourController extends AbstractController
 		]);
 		
 	}
+<<<<<<< HEAD
+=======
+	
+	/**
+     * @Route("/finSejour", name="finSejour")
+     */
+	public function finSejour(Request $request)
+    {
+	$em=$this->getDoctrine()->getManager();
+	$repository=$this->getDoctrine()->getRepository(Sejour::class);
+	$lesSejours=$repository->findAll();
+	return $this->render('sejour/finSejour.html.twig',[
+		'lesSejours'=>$lesSejours,
+		]);
+    }
+>>>>>>> c7da927cab19448e2296908911c0451766d61642
 }
