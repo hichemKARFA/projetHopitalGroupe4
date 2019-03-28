@@ -58,6 +58,7 @@ class SejourController extends AbstractController
      */
 	public function finSejour(Request $request)
     {
+	$em=$this->getDoctrine()->getManager();
 	$repository=$this->getDoctrine()->getRepository(Sejour::class);
 	$lesSejours=$repository->findAll();
 	return $this->render('sejour/finSejour.html.twig',[
