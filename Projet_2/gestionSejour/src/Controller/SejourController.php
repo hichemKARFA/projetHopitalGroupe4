@@ -21,7 +21,7 @@ class SejourController extends AbstractController
 	 /**
      * @Route("/ajoutSejour", name="ajoutSejour")
      */
-	public function creationSejour(Request $request)
+	 public function creationSejour(Request $request)
     {
 	 $sejour=new Sejour();
 	 $form=$this->createForm(SejourType::class,$sejour);
@@ -52,16 +52,4 @@ class SejourController extends AbstractController
 		]);
 		
 	}
-	
-	/**
-     * @Route("/finSejour", name="finSejour")
-     */
-	public function finSejour(Request $request)
-    {
-	$repository=$this->getDoctrine()->getRepository(Sejour::class);
-	$lesSejours=$repository->findAll();
-	return $this->render('sejour/finSejour.html.twig',[
-		'lesSejours'=>$lesSejours,
-		]);
-    }
 }

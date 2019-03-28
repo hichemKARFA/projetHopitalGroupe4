@@ -35,19 +35,6 @@ class PatientController extends AbstractController
 		
 	}
 
-	 /**
-     * @Route("/patient/listeSejours", name="patientListeSejours")
-     */
-	public function AfficherSejoursPatient($id)
-	{
-		$repository=$this->getDoctrine()->getRepository(Patient::class);
-		$patient=$repository->find($id);
-
-		return $this->render('patient/SejoursPatient.html.twig');
-		
-	}
-
-
 	/**
 	* @Route("/patient/supprimerPatient/{id}", name="supprimerPatient")
 	*/
@@ -62,6 +49,20 @@ class PatientController extends AbstractController
 		'patient'=>$patient,
 		]);
 	}
+
+		/**
+	* @Route("/patient/SejourDuPatient/{id}", name="SejourDuPatient")
+	*/
+	public function SejoursDuPatient($id)
+	{
+		$em=$this->getDoctrine()->getManager();
+		$repository=$this->getDoctrine()->getRepository(Patient::class);
+		$patient=$repository->find($id);
+		return $this->render('patient/SejoursPatient.html.twig',[
+		'patient'=>$patient,
+		]);
+	}
+
 
 	/**
 	* @Route("/patient/modifierPatient/{id}", name="modifierPatient")

@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PatientController!{% endblock %}
-
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -9,24 +7,13 @@
 </style>
 
 <div class="example-wrapper">
+     {%for sejour in patient.sejours %}  
+		  ID : {{sejour.id}}
+		  {%else%}
+	      Aucun sejour n'est renseigné
+		  {%endfor%}
 
-    <p>Patient sejours</p>
-    {%for sejour in sejours %}
-    <li>
-		ID : {{patient.id}}  
-		<a style="color: #2AEFB4;margin-left: 20px" href="{{path('listeSejours',{id:patient.id})}}">Séjours du patient</a>    
-		<a style="color: red" href="{{path('supprimerPatient',{id:patient.id})}}">supprimer</a>
-		<a style="color: #3BAAFF" href="{{path('modifierPatient',{id:patient.id})}}">modifier</a><br/>
-		Nom : {{patient.nom}}<br/>
-		Prénom : {{patient.prenom}}<br/>
-		Age : {{patient.age}}<br/>
-		Adresse : {{patient.adresse}}, {{patient.cp}} à {{patient.ville}}</br>
-		Téléphone : {{patient.telephone}}<br/>
-		Adresse mail : {{patient.mail}}<br/><br/>
-		
-	</li>
-	{%else%}
-	Aucun client n'est renseigné
-	{%endfor%}
+    
+<br/><br/>
 </div>
 {% endblock %}

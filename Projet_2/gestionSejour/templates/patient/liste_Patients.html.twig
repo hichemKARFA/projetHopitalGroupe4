@@ -13,7 +13,7 @@
     {%for patient in patients %}
 	<li>
 		ID : {{patient.id}}  
-		<a style="color: #2AEFB4;margin-left: 20px" href="{{path('patientListeSejours',{id:patient.id})}}">Séjours du patient</a>    
+		<a style="color: #2AEFB4;margin-left: 20px" href="{{path('SejourDuPatient',{id:patient.id})}}">Séjours du patient</a>    
 		<a style="color: red" href="{{path('supprimerPatient',{id:patient.id})}}">supprimer</a>
 		<a style="color: #3BAAFF" href="{{path('modifierPatient',{id:patient.id})}}">modifier</a><br/>
 		Nom : {{patient.nom}}<br/>
@@ -22,6 +22,7 @@
 		Adresse : {{patient.adresse}}, {{patient.cp}} à {{patient.ville}}</br>
 		Téléphone : {{patient.telephone}}<br/>
 		Adresse mail : {{patient.mail}}<br/><br/>
+
 		
 	</li>
 	{%else%}
