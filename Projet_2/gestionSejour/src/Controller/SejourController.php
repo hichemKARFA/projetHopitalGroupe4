@@ -6,7 +6,10 @@ use App\Entity\Sejour;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\SejourType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
+
 
 class SejourController extends AbstractController
 {
@@ -58,11 +61,27 @@ class SejourController extends AbstractController
      */
 	public function finSejour(Request $request)
     {
-	$em=$this->getDoctrine()->getManager();
-	$repository=$this->getDoctrine()->getRepository(Sejour::class);
-	$lesSejours=$repository->findAll();
-	return $this->render('sejour/finSejour.html.twig',[
-		'lesSejours'=>$lesSejours,
-		]);
-    }
+
+	$sejour=new Sejour();
+	$form = $this->createFormBuilder($sejour)
+	
+		->add('dateSortie' ,DateType::class, array(
+              'widget' => 'single_text',))
+		->add('save',SubmitType::class,array('label'=>'valider'))
+		->getForm();
+	$form->handleRequest($request);
+		
+		
+	if($form->isSubmitted()&&$form->isValid())
+		{
+			$sejour = $form->getData();
+			$em=$this->getDoctrine()->getManager();
+			$em->persist($sejour);
+			$em->flush();
+			return $this->redirectToRoute('sejourListeSejours');
+		}
+	return $this->render('sejour/finSejour.html.twig',array(
+	'form'=>$form->createView(),
+	));
+}
 }
