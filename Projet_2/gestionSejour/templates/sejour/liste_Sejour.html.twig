@@ -11,25 +11,37 @@
 <div class="example-wrapper">
 	<h2> Liste des sejours </h2>
     {%for sejour in lesSejours %}
+	
 	<li>
-		ID : {{sejour.id}}  
-		<a style="color: #2AEFB4;margin-left: 20px" href="{{path('sejourListeSejours',{id:sejour.id})}}">Patient du sejour</a>    
+		ID : {{sejour.id}} 
+		
+		 
+		<a style="color: #3BAAFF" href="{{path('modifierPatient',{id:sejour.id})}}">modifier</a>
 		<a style="color: red" href="{{path('supprimerPatient',{id:sejour.id})}}">supprimer</a>
-		<a style="color: #3BAAFF" href="{{path('modifierPatient',{id:sejour.id})}}">modifier</a><br/>
-		date d'arrivee : {{sejour.dateArrivee|date("d/m/Y")}}<br/>
+		</br>
+		Date d'arrivee : {{sejour.dateArrivee|date("d/m/Y")}}<br/>
 			{% if sejour.dateSortie == null %}
      			Ce séjour n'est pas terminé
      		{% else %}
-  				date de sortie : {{sejour.dateSortie|date("d/m/Y")}}
+  				Date de sortie : {{sejour.dateSortie|date("d/m/Y")}}
 			{% endif %}
+		</br>
+		Service : {{sejour.lit.chambre.service.libelle}}
+		</br>
+	  Ce séjour est affecté au patient <a style="color: #1E8F37;" href="{{path('sejourListeSejours',{id:sejour.id})}}">{{sejour.patient.nom}} {{sejour.patient.prenom}}</a>   
+	  </br>
+	  
 		
 
 		
 
 		
 	</li>
+	</br>
 	{%else%}
 	Aucun sejour n'est renseigné
+	</br>
 	{%endfor%}
+	
 </div>
 {% endblock %}
