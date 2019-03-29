@@ -10,17 +10,8 @@
 
 <div class="example-wrapper">
 	<h2> Mettre fin à un Séjour </h2>
-	
-	<FORM> hrtythsgfSéjour :
-	<SELECT name="listeSejours">
-	{%for sejour in lesSejours %}
-		<OPTION>{{sejour.id}}-{{sejour.patient.nom}}
-	{%endfor%}
-	</SELECT>
-	</FORM>
-	
-	Date de fin du séjour : <input type="date" />
-
-
+	{{form_start(form)}}
+	{{form_widget(form)}}
+	{{form_end(form)}}
 </div>
 {% endblock %}
