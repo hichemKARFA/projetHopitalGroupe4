@@ -17,7 +17,12 @@
 		<a style="color: red" href="{{path('supprimerPatient',{id:sejour.id})}}">supprimer</a>
 		<a style="color: #3BAAFF" href="{{path('modifierPatient',{id:sejour.id})}}">modifier</a><br/>
 		date d'arrivee : {{sejour.dateArrivee|date("d/m/Y")}}<br/>
-		date de sortie : {{sejour.dateSortie|date("d/m/Y")}}<br/>
+			{% if sejour.dateSortie == null %}
+     			Ce séjour n'est pas terminé
+     		{% else %}
+  				date de sortie : {{sejour.dateSortie|date("d/m/Y")}}
+			{% endif %}
+		
 
 		
 

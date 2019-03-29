@@ -69,11 +69,8 @@ class PatientController extends AbstractController
 	*/
 	public function modifierPatient($id, Request $request)
 	{
-		$em=$this->getDoctrine()->getManager();
 		$repository=$this->getDoctrine()->getRepository(Patient::class);
-		$patient=$repository->find($id);
-		$em=$this->getDoctrine()->getManager();
-		
+		$patient=$repository->find($id);		
 		$form = $this->createFormBuilder($patient)
 				->add('nom', TextType::class, array('label'=>'Nom du patient : '))
 				->add('prenom', TextType::class, array('label'=>'Prénom : '))
@@ -107,7 +104,6 @@ class PatientController extends AbstractController
      */
 	public function ajouterPatient(Request $request)
 	{
-		$em=$this->getDoctrine()->getManager();
 		$Patient=new Patient();
 		$form = $this->createFormBuilder($Patient)
 				->add('nom', TextType::class, array('label'=>'Nom du patient : '))

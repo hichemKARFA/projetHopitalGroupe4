@@ -8,10 +8,17 @@
 
 <div class="example-wrapper">
      {%for sejour in patient.sejours %}  
-		  ID : {{sejour.id}}
-		  {%else%}
-	      Aucun sejour n'est renseigné
-		  {%endfor%}
+		  Séjour n°{{sejour.id}}<br/>
+		  	{%if sejour.dateSortie== null%}
+		  	Ce séjour n'est pas terminé.
+		  	Le patient a commencé ce séjour le {{sejour.dateArrivee|date("d/m/Y")}} <br/><br/>
+		  	
+		  	{%else%}
+		  	Du {{sejour.dateArrivee|date("d/m/Y")}} au {{sejour.dateSortie|date("d/m/Y")}} <br/><br/>
+		  	{%endif%}
+	{%else%}
+	Ce patient n'a pas encore effectué de séjour.<br/> Vous pouvez ajouter des séjours en cliquant driectement sur ce lien : <a href="{{path('ajoutSejour')}}">Ajouter un séjour</a>
+	{%endfor%}
 
     
 <br/><br/>
