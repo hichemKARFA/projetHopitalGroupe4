@@ -3,11 +3,15 @@
 namespace App\Controller;
 
 use App\Entity\Sejour;
+use App\Entity\Patient;
+use App\Entity\Lit;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\SejourType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\HttpFoundation\Request;
 
 
@@ -44,7 +48,7 @@ class SejourController extends AbstractController
 	
 	
 	  /**
-     * @Route("/listesejours", name="sejourListeSejours")
+     * @Route("/listesejours", name="listeSejours")
      */
 		public function afficherSejour()
 	{
@@ -57,16 +61,15 @@ class SejourController extends AbstractController
 	}
 	
 	/**
-     * @Route("/finSejour", name="finSejour")
+     * @Route("/finSejour/{id}", name="finSejour")
      */
-	public function finSejour(Request $request)
+	public function finSejour($id, Request $request)
     {
 
-	$sejour=new Sejour();
-	$form = $this->createFormBuilder($sejour)
-	
-		->add('dateSortie' ,DateType::class, array(
-              'widget' => 'single_text',))
+		$repository=$this->getDoctrine()->getRepository(Sejour::class);
+		$sejour=$repository->find($id);		
+		$form = $this->createFormBuilder($sejour)
+		->add('date_sortie' ,DateType::class, array('widget' => 'single_text',))
 		->add('save',SubmitType::class,array('label'=>'valider'))
 		->getForm();
 	$form->handleRequest($request);
@@ -78,10 +81,43 @@ class SejourController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($sejour);
 			$em->flush();
-			return $this->redirectToRoute('sejourListeSejours');
+			return $this->redirectToRoute('listeSejours');
 		}
 	return $this->render('sejour/finSejour.html.twig',array(
 	'form'=>$form->createView(),
 	));
-}
+	}
+	
+	/**
+	* @Route("/modifierSejour/{id}", name="modifierSejour")
+	*/
+	public function modifierSejour($id, Request $request)
+	{
+		$repository=$this->getDoctrine()->getRepository(Sejour::class);
+		$sejour=$repository->find($id);		
+		$form = $this->createFormBuilder($sejour)
+				->add('patient',EntityType::class,array('class'=>Patient::class, //nom de lattribut dans la classe patient + nom de la classe
+													  'choice_label'=>'libelle')) //un get de la classe patient
+			->add('lit',EntityType::class,array('class'=>Lit::class, //nom de la classe
+													  'choice_label'=>'litchambre')) //attribut a afficher
+				->add('date_arrivee' ,DateType::class, array('widget' => 'single_text',))
+				->add('date_sortie' ,DateType::class, array('widget' => 'single_text',))
+
+				->add('save', SubmitType::class, array('label'=>'Modifier le sejour'))
+				->getForm();
+		
+		
+		$form->handleRequest($request);
+		if($form->isSubmitted()&&$form->isValid())
+		{
+			$sejour = $form->getData();
+			$em=$this->getDoctrine()->getManager();
+			$em->persist($sejour);
+			$em->flush();
+			return $this->redirectToRoute('listeSejours');
+		}
+		return $this->render('sejour/modifierSejour.html.twig',array(
+		'form'=>$form->createView(),
+		));
+	}
 }

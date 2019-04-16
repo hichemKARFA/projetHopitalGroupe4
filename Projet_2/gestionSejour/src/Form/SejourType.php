@@ -19,8 +19,6 @@ class SejourType extends AbstractType
         $builder
             ->add('dateArrivee',DateType::class, array(
               'widget' => 'single_text',))
-            ->add('dateSortie' ,DateType::class, array(
-              'widget' => 'single_text',))
 			->add('patient',EntityType::class,array('class'=>Patient::class, //nom de lattribut dans la classe patient + nom de la classe
 													  'choice_label'=>'libelle')) //un get de la classe patient
 			->add('lit',EntityType::class,array('class'=>Lit::class, //nom de la classe
