@@ -184,3 +184,22 @@ F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\D
 F:\sio2\Tom_Jablonski\PPE\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources
 D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMContenuDemande.resources
 D:\PROJET SLAM BTS SIO\APPLI C#\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMHistoriqueDemande.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csprojAssemblyReference.cache
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAccueil.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAjouterMedicament.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMCommande.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMContenuDemande.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMDemande.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMConnexion.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMHistoriqueDemande.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMModifierStock.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.cache
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.CoreCompileInputs.cache
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb

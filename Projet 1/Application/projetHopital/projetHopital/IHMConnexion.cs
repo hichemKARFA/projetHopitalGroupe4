@@ -11,9 +11,7 @@ using System.Windows.Forms;
 namespace projetHopital
 {
     public partial class IHMConnexion : Form
-    {
-        //public static int idUtilisateur;
-        
+    {        
         public IHMConnexion()
         {
             InitializeComponent();
@@ -45,32 +43,38 @@ namespace projetHopital
         {
             if (txtIdentifiant.Text == String.Empty || txtMdp.Text == String.Empty)
             {
-                MessageBox.Show("Veuillez vérifier que vous ayez bien tout rempli");
+                MessageBox.Show("Veuillez entrer un identifiant et un mot de passe");
             }
-            else if (Passerelle.verifUtilisateur(txtIdentifiant.Text, txtMdp.Text))
+            else if(Passerelle.seConnecter()==true)
             {
-                int idUtilisateur = Passerelle.getidUtilisateur(txtIdentifiant.Text);
-                string nomUser = txtIdentifiant.Text;
-                MessageBox.Show("Bonjour " + txtIdentifiant.Text + "! Bienvenue sur l'application.");
-                if (Passerelle.getPharmacien(txtIdentifiant.Text, txtMdp.Text))
+                if (Passerelle.verifUtilisateur(txtIdentifiant.Text, txtMdp.Text) == true)
                 {
-                    IHMAccueil accueil = new IHMAccueil();
-                    this.Hide();
-                    accueil.ShowDialog();
+                    int idUtilisateur = Passerelle.getidUtilisateur(txtIdentifiant.Text);
+                    MessageBox.Show("Bonjour " + txtIdentifiant.Text + "! Bienvenue sur l'application");
+                    if (Passerelle.verifStatut(txtIdentifiant.Text) == 1)
+                    {
+                        IHMAccueil accueil = new IHMAccueil();
+                        this.Hide();
+                        accueil.ShowDialog();
+                    }
+                    else
+                    {
+                        IHMDemande demande = new IHMDemande(idUtilisateur);
+                        this.Hide();
+                        demande.ShowDialog();
+                    }
                 }
                 else
                 {
-                    IHMDemande demande = new IHMDemande(idUtilisateur);
-                    this.Hide();
-                    demande.ShowDialog();
+                    MessageBox.Show("L'identifiant et le mot de passe ne correspondent pas");
                 }
-
 
             }
             else
             {
-                MessageBox.Show("Le login et le mot de passe ne correspondent pas");
+                MessageBox.Show("Merci de vérifier que votre ordinateur est bien connecté à internet");
             }
+            
         }
 
         private void txtMdp_TextChanged(object sender, EventArgs e)
@@ -86,12 +90,6 @@ namespace projetHopital
         private void txtIdentifiant_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        public int getidUtilisateur()
-        {
-            string nomUser = txtIdentifiant.Text;
-            return Passerelle.getidUtilisateur(nomUser);
-        }
+        }       
     }
 }

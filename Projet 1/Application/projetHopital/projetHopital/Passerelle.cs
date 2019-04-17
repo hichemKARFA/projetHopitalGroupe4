@@ -12,60 +12,68 @@ namespace projetHopital
     class Passerelle
     {
         private static SqlConnection laConnection = null; // Acceder a la BBD
-        private static bool seConnecter()
+
+        public static bool seConnecter()
         {
-            if (laConnection == null)
+            bool test = true;
+            laConnection = new SqlConnection();
+            //laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
+            laConnection.ConnectionString = "Server= localhost; Database= slam2019projetHopitalGroupe4; Integrated Security=True;";
+            try
             {
-
-                laConnection = new SqlConnection();
-                //laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
-                laConnection.ConnectionString = "Server= localhost; Database= slam2019projetHopitalGroupe4; Integrated Security=True;";
                 laConnection.Open();
-                System.Diagnostics.Debug.WriteLine("instanciation connexion");
-
             }
-            else
+            catch (Exception)
             {
-                System.Diagnostics.Debug.WriteLine("connexion existe");
-
+                test = false;
             }
-            return true;
-
+            
+            return test;
         }
 
         public static bool seDeconnecter() // coupe la connection a la bdd
         {
-            if (laConnection != null)
-            {
-                laConnection.Close();
-                System.Diagnostics.Debug.WriteLine("déconnexion");
-                laConnection = null;
-
-            }
+            laConnection.Close();
+            laConnection = null;            
             return true;
-        }
-
-       
+        }       
             
-        public static bool verifUtilisateur(string identifiant, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
+        public static bool verifUtilisateur(string login, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
         {
             bool test = false;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT login,mdp FROM Utilisateurs WHERE login='"+identifiant+"' AND mdp ='"+mdp+"'";
+            String requete = "SELECT id FROM Utilisateurs WHERE login='"+login+"' AND mdp ='"+mdp+"'";
             maCommande = new SqlCommand(requete, laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            while (unJeuResultat.Read())
+            if (unJeuResultat.HasRows == true)
             {
-                string loginBdd = (string)unJeuResultat["login"];
-                string mdpBdd = (string)unJeuResultat["mdp"];
-                if (identifiant == loginBdd && mdp == mdpBdd)
-                {
-                    test = true;
-                }
+                test = true;
             }
             seDeconnecter();
             return test;
+        }
+
+        public static int getidUtilisateur(string login)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT id FROM Utilisateurs WHERE login='" + login + "';";
+            maCommande = new SqlCommand(requete, laConnection);
+            int id = (int)maCommande.ExecuteScalar();
+            seDeconnecter();
+            return id;
+        }
+
+        public static int verifStatut(string login) //Savoir si la personne est un pharmacien ou un infirmier
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + login + "';";
+            maCommande = new SqlCommand(requete, laConnection);
+            int statut = (int)maCommande.ExecuteScalar();
+            seDeconnecter();
+            return statut;
         }
 
         public static ArrayList listeMedicaments() // donne la liste des medicaments 
@@ -89,25 +97,6 @@ namespace projetHopital
             return lesMedicaments;
         }
 
-        public static bool getPharmacien(string identifiant, string mdp) //Savoir si la personne est un pharmacien ou un infirmier
-        {
-            bool test = false;
-            seConnecter();
-            SqlCommand maCommande;
-            String requete = "SELECT statut FROM Utilisateurs WHERE login='" + identifiant + "' AND mdp ='" + mdp + "'";
-            maCommande = new SqlCommand(requete, laConnection);
-            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            while (unJeuResultat.Read())
-            {
-                int statutBdd = (int)unJeuResultat["statut"];
-                if (statutBdd == 1)
-                {
-                    test = true;
-                }
-            }
-            seDeconnecter();
-            return test;
-        }
         public static void creerDemande(int pId, int pUtilisateur)
         {
             seConnecter();
@@ -300,18 +289,6 @@ namespace projetHopital
             test = true;
             return test;
         }
-
-        public static int getidUtilisateur(string pLogin)
-        {
-            seConnecter();
-            SqlCommand maCommande;
-            String requete = "SELECT id FROM Utilisateurs WHERE login='" + pLogin + "';";
-            maCommande = new SqlCommand(requete, laConnection);
-            int id = (int)maCommande.ExecuteScalar();
-            seDeconnecter();
-            return id;
-        }
-        
 
         public static bool verifContenuDemande(int medicament)
         {
