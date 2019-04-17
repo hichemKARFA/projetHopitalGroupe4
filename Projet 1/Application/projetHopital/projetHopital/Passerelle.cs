@@ -18,8 +18,8 @@ namespace projetHopital
             {
 
                 laConnection = new SqlConnection();
-                laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
-                //laConnection.ConnectionString = "Server= localhost; Database= slam2019projetHopitalGroupe4; Integrated Security=True;";
+                //laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019projetHopitalGroupe4;User Id=jablonski;Password=jablonski";
+                laConnection.ConnectionString = "Server= localhost; Database= slam2019projetHopitalGroupe4; Integrated Security=True;";
                 laConnection.Open();
                 System.Diagnostics.Debug.WriteLine("instanciation connexion");
 
