@@ -43,22 +43,45 @@ namespace projetHopital
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-            string nom = txtNom.Text;
-            int stock = int.Parse(txtQtte.Text);
-            int seuil = int.Parse(txtSeuil.Text);
-            Medicament unMedicament = new Medicament(id, nom, stock, seuil);
-            bool test = Passerelle.modifierMedicament(unMedicament);
-            if (test == true)
+
+            if (txtNom.Text == string.Empty || txtQtte.Text == string.Empty || txtSeuil.Text == string.Empty)
             {
-                MessageBox.Show("Le médicament à bien été modifié");
-                IHMStock stock2 = new IHMStock();
-                this.Hide();
-                stock2.ShowDialog();
+                MessageBox.Show("Veuillez renseigner toutes les informations ");
             }
             else
             {
-                MessageBox.Show("Une erreur est survenue");
+                int stock, seuil;
+                Boolean testQtte;
+                Boolean testSeuil;
+                testQtte = int.TryParse(txtQtte.Text, out stock);
+                testSeuil = int.TryParse(txtSeuil.Text, out seuil);
+                if (!testQtte || !testSeuil)
+                {
+                    MessageBox.Show("Vous n'avez pas saisi une quantité et/ou un seuil valide");
+                }
+                else
+                {
+                    string nom = txtNom.Text;
+                    Medicament unMedicament = new Medicament(id, nom, stock, seuil);
+                    bool test = Passerelle.modifierMedicament(unMedicament);
+                    if (test == true)
+                    {
+                        MessageBox.Show("Le médicament à bien été modifié");
+                        IHMStock stock2 = new IHMStock();
+                        this.Hide();
+                        stock2.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Une erreur est survenue");
+                    }
+                }
             }
+
+           
+                
+
+           
 
         }
     }

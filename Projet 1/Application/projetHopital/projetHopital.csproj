@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9946725-81D5-45D9-BDA5-DC03A47B90D1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>projetHopital</RootNamespace>
+    <AssemblyName>projetHopital</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContenuDemande.cs" />
+    <Compile Include="Demande.cs" />
+    <Compile Include="IHMAccueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMAccueil.Designer.cs">
+      <DependentUpon>IHMAccueil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMAjouterMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMAjouterMedicament.Designer.cs">
+      <DependentUpon>IHMAjouterMedicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMCommande.Designer.cs">
+      <DependentUpon>IHMCommande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMContenuDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMContenuDemande.Designer.cs">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMDemande.Designer.cs">
+      <DependentUpon>IHMDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMConnexion.Designer.cs">
+      <DependentUpon>IHMConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMGestionDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMGestionDemande.Designer.cs">
+      <DependentUpon>IHMGestionDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IHMHistoriqueDemande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMHistoriqueDemande.Designer.cs">
+      <DependentUpon>IHMHistoriqueDemande.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medicament.cs" />
+    <Compile Include="IHMModifierStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMModifierStock.Designer.cs">
+      <DependentUpon>IHMModifierStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Passerelle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IHMStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IHMStock.Designer.cs">
+      <DependentUpon>IHMStock.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="IHMAccueil.resx">
+      <DependentUpon>IHMAccueil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMAjouterMedicament.resx">
+      <DependentUpon>IHMAjouterMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMCommande.resx">
+      <DependentUpon>IHMCommande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMContenuDemande.resx">
+      <DependentUpon>IHMContenuDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMDemande.resx">
+      <DependentUpon>IHMDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMConnexion.resx">
+      <DependentUpon>IHMConnexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMGestionDemande.resx">
+      <DependentUpon>IHMGestionDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMHistoriqueDemande.resx">
+      <DependentUpon>IHMHistoriqueDemande.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IHMModifierStock.resx">
+      <DependentUpon>IHMModifierStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="IHMStock.resx">
+      <DependentUpon>IHMStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\médocs2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
