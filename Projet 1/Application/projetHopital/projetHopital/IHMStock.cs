@@ -63,62 +63,46 @@ namespace projetHopital
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedIndices.Count == 0)
-            {
-                MessageBox.Show("Vous n'avez pas saisi de médicament à modifier");
-            }
-            else
-            {
-                int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-                IHMModifierStock modif = new IHMModifierStock(id);
-                this.Hide();
-                modif.ShowDialog();
-            }
-           
+            int id = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            IHMModifierStock modif = new IHMModifierStock(id);
+            this.Hide();
+            modif.ShowDialog();
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedIndices.Count == 0)
+            bool test=false;
+            int medicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
+            test = Passerelle.verifContenuDemande(medicament);
+            if (test == true)
             {
-                MessageBox.Show("Vous n'avez pas saisi de médicament à supprimer");
+                DialogResult result1 = MessageBox.Show("La supression de ce médicament entrainera la suppression des demandes dans lesquels le médicament est present.\n\nVoulez vous continuer ?","Avertissement",MessageBoxButtons.YesNo);
+                if(result1==DialogResult.Yes)
+                {
+                    Passerelle.supprimerContenuDemande(medicament);
+                    Passerelle.supprimerDemande();
+                    Passerelle.supprimerMedicament(medicament);
+                }  
             }
             else
             {
-                bool test = false;
-                int medicament = int.Parse(listView1.SelectedItems[0].SubItems[0].Text);
-                test = Passerelle.verifContenuDemande(medicament);
-                if (test == true)
-                {
-                    DialogResult result1 = MessageBox.Show("La supression de ce médicament entrainera la suppression des demandes dans lesquels le médicament est present.\n\nVoulez vous continuer ?", "Avertissement", MessageBoxButtons.YesNo);
-                    if (result1 == DialogResult.Yes)
-                    {
-                        Passerelle.supprimerContenuDemande(medicament);
-                        Passerelle.supprimerDemande();
-                        Passerelle.supprimerMedicament(medicament);
-                    }
-                }
-                else
-                {
-                    Passerelle.supprimerMedicament(medicament);
-                }
-                listView1.Items.Clear();
-                ArrayList lesMedicaments = new ArrayList();
-                lesMedicaments = Passerelle.listeMedicaments();
-                foreach (Medicament unMedicament in lesMedicaments) // reaffiche la liste (pour mettre a jour)
-                {
-                    string[] arr = new string[4];
-                    ListViewItem itm;
-                    arr[0] = unMedicament.getId() + "";
-                    arr[1] = unMedicament.getNom();
-                    arr[2] = unMedicament.getStock() + "";
-                    arr[3] = unMedicament.getSeuil() + "";
-                    itm = new ListViewItem(arr);
-                    listView1.Items.Add(itm);
-                    ;
-                }
+                Passerelle.supprimerMedicament(medicament);
             }
-           
+            listView1.Items.Clear();
+            ArrayList lesMedicaments = new ArrayList();
+            lesMedicaments = Passerelle.listeMedicaments();
+            foreach (Medicament unMedicament in lesMedicaments) // reaffiche la liste (pour mettre a jour)
+            {
+                string[] arr = new string[4];
+                ListViewItem itm;
+                arr[0] = unMedicament.getId() + "";
+                arr[1] = unMedicament.getNom();
+                arr[2] = unMedicament.getStock() + "";
+                arr[3] = unMedicament.getSeuil() + "";
+                itm = new ListViewItem(arr);
+                listView1.Items.Add(itm);
+                ;
+            }
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

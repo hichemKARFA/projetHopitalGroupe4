@@ -37,44 +37,20 @@ namespace projetHopital
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-
-            if (txtNom.Text == string.Empty || txtQuantite.Text == string.Empty || txtSeuil.Text==string.Empty)
+            bool test;
+            Medicament unMedicament = new Medicament(Passerelle.trouverId("Medicaments"), txtNom.Text, int.Parse(txtQuantite.Text), int.Parse(txtSeuil.Text));
+            test=Passerelle.ajoutMedicament(unMedicament);
+            if (test==true)
             {
-                MessageBox.Show("Veuillez renseigner toutes les informations ");
+                MessageBox.Show("Le médicament à bien été ajouté");
+                IHMStock stock = new IHMStock();
+                this.Hide();
+                stock.ShowDialog();
             }
             else
             {
-                int qtte,seuil;
-                Boolean testQtte;
-                Boolean testSeuil;
-                testQtte = int.TryParse(txtQuantite.Text, out qtte);
-                testSeuil = int.TryParse(txtSeuil.Text, out seuil);
-                if (!testQtte || !testSeuil)
-                {
-                    MessageBox.Show("Vous n'avez pas saisi une quantité et/ou un seuil valide");
-                }
-                else
-                {
-                    bool test;
-                    Medicament unMedicament = new Medicament(Passerelle.trouverId("Medicaments"), txtNom.Text, qtte, seuil);
-                    test = Passerelle.ajoutMedicament(unMedicament);
-                    if (test == true)
-                    {
-                        MessageBox.Show("Le médicament à bien été ajouté");
-                        IHMStock stock = new IHMStock();
-                        this.Hide();
-                        stock.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Une erreur est survenue");
-                    }
-                }
-
-               
+                MessageBox.Show("Une erreur est survenue");
             }
-
-           
         }
 
         private void AjouterMedicament_Load(object sender, EventArgs e)
