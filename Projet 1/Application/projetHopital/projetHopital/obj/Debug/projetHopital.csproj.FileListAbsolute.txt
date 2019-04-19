@@ -203,3 +203,22 @@ C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\
 C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.CoreCompileInputs.cache
 C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.exe
 C:\Users\Tom\Desktop\Projet 1\Application\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\bin\Debug\projetHopital.exe.config
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\bin\Debug\projetHopital.exe
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\bin\Debug\projetHopital.pdb
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.csprojAssemblyReference.cache
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAccueil.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMAjouterMedicament.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMCommande.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMContenuDemande.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMDemande.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMConnexion.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.gestionDemandes.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMHistoriqueDemande.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMModifierStock.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.Properties.Resources.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.IHMStock.resources
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.GenerateResource.cache
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.csproj.CoreCompileInputs.cache
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.exe
+C:\Users\hiche\Desktop\travaille\projetHopital\projetHopital\obj\Debug\projetHopital.pdb
