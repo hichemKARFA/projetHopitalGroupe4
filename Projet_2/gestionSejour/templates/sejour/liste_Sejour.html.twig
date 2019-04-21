@@ -31,14 +31,8 @@
 		</br>
 		Service : {{sejour.lit.chambre.service.libelle}}
 		</br>
-	  Ce séjour est affecté au patient <a style="color: #1E8F37;" href="{{path('listeSejours',{id:sejour.id})}}">{{sejour.patient.nom}} {{sejour.patient.prenom}}</a>   
-	  </br>
-	  
-		
-
-		
-
-		
+	  Ce séjour est affecté au patient <a style="color: #1E8F37;" href="{{path('SejourDuPatient',{id:sejour.patient.id})}}">{{sejour.patient.nom}} {{sejour.patient.prenom}}</a>   
+	  </br>		
 	</li>
 	</br>
 	{%else%}

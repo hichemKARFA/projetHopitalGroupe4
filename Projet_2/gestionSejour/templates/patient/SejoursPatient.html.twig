@@ -7,6 +7,7 @@
 </style>
 
 <div class="example-wrapper">
+	<b>Listes des séjours effectués pour le patient {{patient.nom}} {{patient.prenom}}<br/><br/></b>
      {%for sejour in patient.sejours %}  
 		  Séjour n°{{sejour.id}}<br/>
 		  	{%if sejour.dateSortie== null%}
