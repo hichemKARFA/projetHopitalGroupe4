@@ -60,6 +60,24 @@ class SejourController extends AbstractController
 		
 	}
 	
+	
+	/**
+	* @Route("/sejour/supprimerSejour/{id}", name="supprimerSejour")
+	*/
+	public function supprimerSejour($id)
+	{
+		$repository=$this->getDoctrine()->getRepository(Sejour::class);
+		$Sejour=$repository->find($id);
+		$em=$this->getDoctrine()->getManager();
+		$em->remove($Sejour);
+		$em->flush();
+		return $this->render('Sejour/supprimerSejour.html.twig',[
+		'Sejour'=>$Sejour,
+		]);
+	}
+	
+	
+	
 	/**
      * @Route("/finSejour/{id}", name="finSejour")
      */

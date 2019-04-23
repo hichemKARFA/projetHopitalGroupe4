@@ -17,7 +17,8 @@
 		
 		 
 		<a style="color: #3BAAFF" href="{{path('modifierSejour',{id:sejour.id})}}">modifier</a>
-		<a style="color: red" href="{{path('supprimerPatient',{id:sejour.id})}}">supprimer</a>
+		<a style="color: red" href="{{path('supprimerSejour',{id:sejour.id})}}">supprimer</a>
+		
 		{% if sejour.dateSortie == null %}
 			<a style="color: purple" href="{{path('finSejour',{id:sejour.id})}}">Mettre fin au séjour</a>
 		{% endif %}
