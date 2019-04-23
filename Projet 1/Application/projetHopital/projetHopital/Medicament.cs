@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projetHopital
 {
-    class Medicament
+   public class Medicament
     {
         private int id;
         private string nom;

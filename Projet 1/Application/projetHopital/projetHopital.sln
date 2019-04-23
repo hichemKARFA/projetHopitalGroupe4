@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projetHopital", "projetHopital\projetHopital.csproj", "{D9946725-81D5-45D9-BDA5-DC03A47B90D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "projetHopitalTests", "projetHopitalTests\projetHopitalTests.csproj", "{DB0EDD20-5568-4360-931F-B4578D1A13CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{D9946725-81D5-45D9-BDA5-DC03A47B90D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9946725-81D5-45D9-BDA5-DC03A47B90D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9946725-81D5-45D9-BDA5-DC03A47B90D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB0EDD20-5568-4360-931F-B4578D1A13CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB0EDD20-5568-4360-931F-B4578D1A13CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB0EDD20-5568-4360-931F-B4578D1A13CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB0EDD20-5568-4360-931F-B4578D1A13CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E26D7516-D237-4EA2-8350-88F556B5C7F8}
 	EndGlobalSection
 EndGlobal

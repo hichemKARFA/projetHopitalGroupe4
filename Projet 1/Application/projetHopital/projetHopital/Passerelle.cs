@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace projetHopital
 {
-    class Passerelle
+    public class Passerelle
     {
         private static SqlConnection laConnection = null; // Acceder a la BBD
 
@@ -33,9 +33,19 @@ namespace projetHopital
 
         public static bool seDeconnecter() // coupe la connection a la bdd
         {
-            laConnection.Close();
-            laConnection = null;            
-            return true;
+            bool test = true;
+            try
+            {
+                laConnection.Close();
+                laConnection = null;
+            }
+            catch (Exception)
+            {
+                test = false;
+            }
+
+                     
+            return test;
         }       
             
         public static bool verifUtilisateur(string login, string mdp) // Verifie si l'utilisateur existe et si le login et mdp corresponde
@@ -54,7 +64,7 @@ namespace projetHopital
             return test;
         }
 
-        public static int getidUtilisateur(string login)
+        public static int getidUtilisateur(string login)//Recupere l'id d'un utilisateur en fonction du login
         {
             seConnecter();
             SqlCommand maCommande;
