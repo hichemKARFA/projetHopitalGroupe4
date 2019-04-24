@@ -1,0 +1,8 @@
+composer install
+composer update
+cd /var/www/html/
+sudo rm -Rf gestionSejour
+sudo cp -R /home/ubuntu/Bureau/gestionSejour /var/www/html
+sudo chmod -R 777 ./gestionSejour/
+cd gestionSejour
+composer dump-env prod
