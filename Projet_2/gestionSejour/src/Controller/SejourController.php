@@ -71,7 +71,7 @@ class SejourController extends AbstractController
 		$em=$this->getDoctrine()->getManager();
 		$em->remove($Sejour);
 		$em->flush();
-		return $this->render('Sejour/supprimerSejour.html.twig',[
+		return $this->render('sejour/supprimerSejour.html.twig',[
 		'Sejour'=>$Sejour,
 		]);
 	}
