@@ -26,35 +26,35 @@ class SejourController extends AbstractController
     }
 	
 	 /**
-     * @Route("/ajoutSejour", name="ajoutSejour")
+     * @Route("/ajouterSejour", name="ajouterSejour")
      */
-	 public function creationSejour(Request $request)
+	 public function ajouterSejour(Request $request)
     {
-	 $sejour=new Sejour();
-	 $form=$this->createForm(SejourType::class,$sejour);
-     $form->handleRequest($request);
+	$sejour=new Sejour();
+	$form=$this->createForm(SejourType::class,$sejour);
+    $form->handleRequest($request);
 	if($form->isSubmitted()&&$form->isValid())
 	{
 	$sejour=$form->getData();
 	$em=$this->getDoctrine()->getManager();
 	$em->persist($sejour);
 	$em->flush();
-	return $this->RedirectToRoute('index');
+	return $this->RedirectToRoute('listeSejours');
 	}
-	return $this->render('sejour/formulaireSejour.html.twig', array(
+	return $this->render('sejour/ajouterSejour.html.twig', array(
 			'form'=>$form->CreateView(),
 			));  
     }
 	
 	
 	  /**
-     * @Route("/listesejours", name="listeSejours")
+     * @Route("/listeSejours", name="listeSejours")
      */
-		public function afficherSejour()
+		public function afficherSejours()
 	{
 		$repository=$this->getDoctrine()->getRepository(Sejour::class);
 		$lesSejours=$repository->findAll();
-		return $this->render('sejour/liste_Sejour.html.twig',[
+		return $this->render('sejour/listeSejours.html.twig',[
 		'lesSejours'=>$lesSejours,
 		]);
 		
@@ -62,7 +62,7 @@ class SejourController extends AbstractController
 	
 	
 	/**
-	* @Route("/sejour/supprimerSejour/{id}", name="supprimerSejour")
+	* @Route("/supprimerSejour/{id}", name="supprimerSejour")
 	*/
 	public function supprimerSejour($id)
 	{
@@ -115,13 +115,13 @@ class SejourController extends AbstractController
 		$sejour=$repository->find($id);		
 		$form = $this->createFormBuilder($sejour)
 				->add('patient',EntityType::class,array('class'=>Patient::class, //nom de lattribut dans la classe patient + nom de la classe
-													  'choice_label'=>'libelle')) //un get de la classe patient
+													  'choice_label'=>'libelle', 'label'=>'Patient : ')) //un get de la classe patient
 			->add('lit',EntityType::class,array('class'=>Lit::class, //nom de la classe
-													  'choice_label'=>'litchambre')) //attribut a afficher
-				->add('date_arrivee' ,DateType::class, array('widget' => 'single_text',))
-				->add('date_sortie' ,DateType::class, array('widget' => 'single_text',))
+													  'choice_label'=>'litchambre', 'label'=>'Lit : ')) //attribut a afficher
+				->add('date_arrivee' ,DateType::class, array('widget' => 'single_text', 'label'=>"Date d'arrivée : "))
+				->add('date_sortie' ,DateType::class, array('widget' => 'single_text', 'label'=>'Date de sortie : ', 'required'=>false))
 
-				->add('save', SubmitType::class, array('label'=>'Modifier le sejour'))
+				->add('save', SubmitType::class, array('label'=>'Modifier le séjour'))
 				->getForm();
 		
 		

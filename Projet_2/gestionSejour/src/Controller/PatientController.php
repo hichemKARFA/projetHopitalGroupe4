@@ -23,20 +23,20 @@ class PatientController extends AbstractController
     }
 
      /**
-     * @Route("/listepatients", name="listepatients")
+     * @Route("/listePatients", name="listePatients")
      */
 	public function afficherPatients()
 	{
 		$repository=$this->getDoctrine()->getRepository(Patient::class);
 		$lesPatients=$repository->findAll();
-		return $this->render('patient/liste_Patients.html.twig',[
+		return $this->render('patient/listePatients.html.twig',[
 		'patients'=>$lesPatients,
 		]);
 		
 	}
 
 	/**
-	* @Route("/patient/supprimerPatient/{id}", name="supprimerPatient")
+	* @Route("/supprimerPatient/{id}", name="supprimerPatient")
 	*/
 	public function supprimerPatient($id)
 	{
@@ -51,21 +51,21 @@ class PatientController extends AbstractController
 	}
 
 		/**
-	* @Route("/patient/SejourDuPatient/{id}", name="SejourDuPatient")
+	* @Route("/sejoursPatient/{id}", name="sejoursPatient")
 	*/
-	public function SejoursDuPatient($id)
+	public function sejoursPatient($id)
 	{
 		$em=$this->getDoctrine()->getManager();
 		$repository=$this->getDoctrine()->getRepository(Patient::class);
 		$patient=$repository->find($id);
-		return $this->render('patient/SejoursPatient.html.twig',[
+		return $this->render('patient/sejoursPatient.html.twig',[
 		'patient'=>$patient,
 		]);
 	}
 
 
 	/**
-	* @Route("/patient/modifierPatient/{id}", name="modifierPatient")
+	* @Route("/modifierPatient/{id}", name="modifierPatient")
 	*/
 	public function modifierPatient($id, Request $request)
 	{
@@ -74,7 +74,7 @@ class PatientController extends AbstractController
 		$form = $this->createFormBuilder($patient)
 				->add('nom', TextType::class, array('label'=>'Nom du patient : '))
 				->add('prenom', TextType::class, array('label'=>'Prénom : '))
-				->add('age', IntegerType::class, array('label'=>'Age : '))
+				->add('age', IntegerType::class, array('label'=>'Âge : '))
 				->add('adresse', TextType::class, array('label'=>'Adresse : '))
 				->add('ville', TextType::class, array('label'=>'Ville : '))
 				->add('cp', TextType::class, array('label'=>'Code Postal : '))
@@ -92,7 +92,7 @@ class PatientController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($patient);
 			$em->flush();
-			return $this->redirectToRoute('listepatients');
+			return $this->redirectToRoute('listePatients');
 		}
 		return $this->render('patient/modifierPatient.html.twig',array(
 		'form'=>$form->createView(),
@@ -100,7 +100,7 @@ class PatientController extends AbstractController
 	}
 
 	/**
-     * @Route("/patient/ajouterPatient", name="ajouterPatient")
+     * @Route("/ajouterPatient", name="ajouterPatient")
      */
 	public function ajouterPatient(Request $request)
 	{
@@ -108,14 +108,14 @@ class PatientController extends AbstractController
 		$form = $this->createFormBuilder($Patient)
 				->add('nom', TextType::class, array('label'=>'Nom du patient : '))
 				->add('prenom', TextType::class, array('label'=>'Prénom : '))
-				->add('age', IntegerType::class, array('label'=>'Age : '))
+				->add('age', IntegerType::class, array('label'=>'Âge : '))
 				->add('adresse', TextType::class, array('label'=>'Adresse : '))
 				->add('ville', TextType::class, array('label'=>'Ville : '))
 				->add('cp', TextType::class, array('label'=>'Code Postal : '))
 				->add('telephone', TextType::class, array('label'=>'Téléphone : '))
 				->add('mail', TextType::class, array('label'=>'Adresse mail : '))
 
-				->add('save', SubmitType::class, array('label'=>'ajouter un Patient'))
+				->add('save', SubmitType::class, array('label'=>'Créer le patient'))
 				->getForm();
 		
 		
@@ -126,7 +126,7 @@ class PatientController extends AbstractController
 			$em=$this->getDoctrine()->getManager();
 			$em->persist($Patient);
 			$em->flush();
-			return $this->redirectToRoute('listepatients');
+			return $this->redirectToRoute('listePatients');
 		}
 		return $this->render('patient/ajouterPatient.html.twig',array(
 		'form'=>$form->createView(),

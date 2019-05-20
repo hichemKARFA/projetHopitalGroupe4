@@ -18,12 +18,12 @@ class SejourType extends AbstractType
     {
         $builder
             ->add('dateArrivee',DateType::class, array(
-              'widget' => 'single_text',))
+              'widget' => 'single_text', 'label'=>"Date d'arrivée : "))
 			->add('patient',EntityType::class,array('class'=>Patient::class, //nom de lattribut dans la classe patient + nom de la classe
-													  'choice_label'=>'libelle')) //un get de la classe patient
+													  'choice_label'=>'libelle', 'label'=>'Patient : ')) //un get de la classe patient
 			->add('lit',EntityType::class,array('class'=>Lit::class, //nom de la classe
-													  'choice_label'=>'litchambre')) //attribut a afficher
-			->add('save',SubmitType::class,array('label'=>'valider'))
+													  'choice_label'=>'litchambre', 'label'=>'Lit : ')) //attribut a afficher
+			->add('save',SubmitType::class,array('label'=>'Créer le séjour'))
         ;
     }
 

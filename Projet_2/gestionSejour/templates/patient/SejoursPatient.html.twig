@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Séjours patient{% endblock %}
+
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -7,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-	<b>Listes des séjours effectués pour le patient {{patient.nom}} {{patient.prenom}}<br/><br/></b>
+	<b>Liste des séjours effectués pour le patient {{patient.nom}} {{patient.prenom}}<br/><br/></b>
      {%for sejour in patient.sejours %}  
 		  Séjour n°{{sejour.id}}<br/>
 		  	{%if sejour.dateSortie== null%}
@@ -18,7 +20,7 @@
 		  	Du {{sejour.dateArrivee|date("d/m/Y")}} au {{sejour.dateSortie|date("d/m/Y")}} <br/><br/>
 		  	{%endif%}
 	{%else%}
-	Ce patient n'a pas encore effectué de séjour.<br/> Vous pouvez ajouter des séjours en cliquant driectement sur ce lien : <a href="{{path('ajoutSejour')}}">Ajouter un séjour</a>
+	Ce patient n'a pas encore effectué de séjour.<br/> Vous pouvez ajouter des séjours en cliquant sur ce lien : <a href="{{path('ajouterSejour')}}">Ajouter un séjour</a>
 	{%endfor%}
 
     
